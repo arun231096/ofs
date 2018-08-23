@@ -11,7 +11,14 @@ group by e.college_id
  join designation as d on d.id=e.desg_id
  where e.college_id = 223
  
+
+select d.dept_code,d.dept_name, c.id, u.university_name,e.name,e.id,ed.name, e.desg_id from department As d
+join college_department as cd on cd.udept_code=d.dept_code
+join college as c on c.id=cd.college_id
+join university as u on u.univ_code=c.univ_code
+join employee as e on e.cdept_id=cd.cdept_id
+join designation as ed on ed.id=e.desg_id
+where dept_name = 'Computer Science' OR dept_name = 'Information Technology' having ed.name='HOD'
  
  
- 
- select *from employee
+ select *from designation
