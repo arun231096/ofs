@@ -1,0 +1,25 @@
+	University Details Schema
+	
+Understanding Problem :
+	Create schemas for the given university ER diagram and establish relationships between the tables.
+	
+Inferred Requirements :
+	Table names, Field names, Constraints, Sample records.
+	
+Clarifications :
+    Number of Records per table.
+	
+System Perspective :
+	List of Events
+		1. database user creates tables.
+		2. database user inserts records to the table.
+		
+		
+	* database user creates tables
+		source : database user
+		trigger: key press
+		start state : Database without any tables regarding university schema
+		end state	: Database with tables created for university schema
+		jobs to be done : 1.defining table names
+						  2.defining data types for fields
+						  3.defining constraints for the required fields 

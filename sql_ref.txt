@@ -1,0 +1,92 @@
+3.SQL CRUD (MYSQL)
+	3.1 Commands 
+	3.2 DDL
+		- CREATE
+			CREATE DATABASE <DB_NAME>; 
+			CREATE TABLE <TABLE_NAME>
+			(
+				column_name1 datatype1 [Constraints],
+				column_name2 datatype2,
+				column_name3 datatype3,
+				column_name4 datatype4,
+				PRIMARY KEY (column_name)
+				KEY <KEY_NAME> (column_name1),
+				CONSTRAINT <CONSTRAINT_NAME> FOREIGN KEY (column_name) REFERENCES <FK_TABLE_NAME> (column_name) ON DELETE NO ACTION ON UPDATE NO ACTION
+				
+			);
+			
+			
+		//data types - > INT FLOAT DOUBLE VARCHAR CHAR DATE TEXT
+		//Constraints  - > NULL NOT NULL DEFAULT CHECK PRIMARY KEY FOREIGN KEY UNIQUE
+        - ALTER 
+			ALTER TABLE table_name ADD(column_name datatype);
+			ALTER TABLE student MODIFY column_name datatype; 
+			//ALTER TABLE table_name DROP(column_name);
+			ALTER TABLE table_name DROP COLUMN test INT(11);
+			//ALTER TABLE table_name RENAME old_column_name TO new_column_name;
+			ALTER TABLE table_name CHANGE COLUMN old_column_name new_column_name datatype1 [Constraints];
+
+        - DROP
+			DROP TABLE table_name
+		- TRUNCATE
+			TRUNCATE TABLE table_name
+		- RENAME			
+			RENAME TABLE old_table_name to new_table_name
+			
+	3.3 DML
+		- INSERT
+			INSERT INTO table_name (col_1,col_2 .... ) VALUES(data1, data2, ...)
+		- UPDATE
+			UPDATE table_name SET column_name = new_value WHERE some_condition;
+		- DELETE
+			DELETE FROM table_name;
+		- //MERGE 
+		- SELECT
+			- SELECT 
+			column_name1, 
+			column_name2, 
+			column_name3, 
+			...
+			column_nameN 
+			FROM table_name;
+			3.4 Others (DCL,TCL)
+				GRANT, PERMISSION, COMMIT, ROLLBACK    
+	
+4.Breakthrough Rapid Reading (MYSQL) (Part 1)
+	4.1 Where and ORDER BY, LIMIT 
+		SELECT * FROM table_name WHERE <COndition>;
+		SELECT * FROM table_name ORDER BY coulumn <ASC/DESC>;
+	4.2 GROUP BY and HAVING
+		SELECT column_name, function(column_name) FROM table_name WHERE column_name condition GROUP BY column_name HAVING function(column_name) condition
+	4.3 REGEXP Wildcards Like, NOT Like, ( % _ )
+		SELECT * FROM table_name WHERE coulumn like "%%";
+	4.4 Functions
+		- inbuilt Functions now() substr().... 
+		- MAX, MIN, AVG, COUNT, FIRST, LAST, SUM 
+
+		
+5.Breakthrough Rapid Reading (MYSQL) (Part 2)
+	5.1 Operators
+		- AND OR NOT
+	5.2 Subqueries
+		- Scalar Operand
+			MAX, MIN, AVG, COUNT, SUM 
+		- Comparisons
+			IF(age>13, 'true', 'false') AS ageGT
+		- ALL, ANY, IN
+			
+		- Row Subqueries
+			
+	
+	5.3 UNION
+			SELECT `column1`,` column1FROM `table1` UNION DISTINCT SELECT ` column1`,` column1`  FROM `table2`;
+	5.4 JOINS
+		- INNER, OUTER, LEFT, RIGHT, CROSS
+		SELECT column-name-list FROM table-name1 CROSS JOIN table-name2;
+		SELECT column-name-list FROM table-name1 INNER JOIN table-name2 ON table-name1.column-name = table-name2.column-name;
+		SELECT column-name-list FROM table-name1 RIGHT JOIN table-name2 ON table-name1.column-name = table-name2.column-name;
+		SELECT column-name-list FROM table-name1 FULL JOIN  table-name2 ON table-name1.column-name = table-name2.column-name;
+	
+	5.5 Views
+			CREATE VIEW <view_Name> AS <Your Query>;
+			
