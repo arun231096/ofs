@@ -26,7 +26,7 @@ where dept_name = 'Computer Science' OR dept_name = 'Information Technology' hav
 
 
 
-select s.rollnumber,s.name, s.gender,s.dob, s.phone,s.address, s.email, c.name, d.dept_name,e.`desg_id` from college as c
+select s.rollnumber,s.name, s.gender,s.dob, s.phone,s.address, s.email, c.name, d.dept_name,e.`desig_id` from college as c
 join (select univ_code,university_name from university where university_name = 'Anna University') as u 
 join college_department as cd on cd.`college_id`=c.`id`
 join student as s on s.`college_id`=c.`id`
