@@ -44,7 +44,7 @@ VALUES ('221','A221','223'),
 					
 
 INSERT INTO syllabus(`id`,cdept_id,syllabus_code,syllabus_name)
-VALUES ('2100','221','IT01','oops'),
+VALUES   ('2100','221','IT01','oops'),
 		 ('2101','221','IT02','Java'),
 		 ('2200','222','EC01','DSP'),
 		 ('2201','222','EC02','Control Networks'),
