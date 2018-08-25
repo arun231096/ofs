@@ -1,0 +1,19 @@
+University schema
+
+Problem understanding 
+    To create a Database and establish the relations for the given tables and acquire the result set for each statement.
+    
+Inferred requirements 
+    Database with the given tables 
+    Entity relations diagram 
+
+Event 1 
+Acquire the result set with the required details of the colleges that has IT/CSE departments in it
+
+Jobs to be done 
+Identify the relationships between the tables and create the tables accordingly 
+Insert values for each tables for every columns
+Enter the statement for obtaining the required result set 
+
+
+    
