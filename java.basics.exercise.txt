@@ -1,0 +1,29 @@
+General Practices:
+- no static methods other than the 'main' method, unless the problem explicitly requires you to do that
+- use Notepad++ and cmd
+- try to find out as many solutions as you can, like case-insensitive String comparision has many solutions. Try to figure out as many as possible.
+- objective is that you search, find and understand the API's and NOT just the completion of the excercises
+- spend time on reading through other related API classes and methods too, as well as the relevant java tutorial sections
+
+Write a program to,
++ print the absolute path of the .class file of the current class
++ open the source file of the running class in Notepad++ - do NOT hardcode/specify the source file in the code; find the source file using APIs
++ sort and print following String[] alphabetically ignoring case. Also convert and print even indexed Strings into uppercase
++       { "Madurai", "Thanjavur", "TRICHY", "Karur", "Erode", "trichy", "Salem" }
++ demonstrate varargs param with other params
++ demonstrate object equality using Object.equals() vs ==, using String objects
++ print fibinocci using for loop, while loop and recursion
++ create a Employee class with properties: id and name, a constructor which initializes name, a mechanism to automatically assign id by incrementing the previous id. Create and print 10 employee objects using Object.toString()
++ list down the differences between the classname of arrays of primitive types and String
++ print the type of the result value of following expressions
+  - 100 / 24
+  - 100.10 / 10
+  - 'Z' / 2
+  - 10.5 / 0.5
+  - 12.4 % 5.5
+  - 100 % 56
++ demonstrate what happens when mixing primitive with respective Wrapper types for the above operations
++ demonstrate inheritance, overloading, overriding using Animal, Dog, Cat and Snake class of objects
++ demonstrate overloading with varargs
++ demonstrate overloading with Wrapper types
+- print the classname of all the primitive data types (Note: not the wrapper types)

@@ -6,13 +6,15 @@ SELECT sr.stud_id, sr.grade,
 END)/ sr.credit) AS GPA
 FROM semester_result as sr
 
-
+/*
 WHERE sr.stud_id = 101
-SELECT *FROM semester_fee
-SELECT *FROM syllabus
+--SELECT *FROM semester_fee
+--SELECT *FROM syllabus
 INSERT into ()
 
 
 SELECT 
 SELECT (SELECT SUM(amount) FROM semester_fee)-(SELECT SUM(amount) FROM semester_fee WHERE paid_year = 2018) AS S
-SELECT * FROM syllabus
+--SELECT * FROM syllabus
+
+*/
