@@ -1,0 +1,71 @@
+============================================
+Tutorial links - Useful links
+============================================
+
+Coding standards reference 
+    - file://nas/Distribution/ref/java/GoogleJavaStyle.html
+
+Main Method
+    - http://tutorials.jenkov.com/java/main-method.html
+Compilation and Execution
+    - http://tutorials.jenkov.com/java/java-project-overview-compilation-and-execution.html#compiling-the-java-source-code
+    - file://nas/Distribution/ref/java/jdk1.8.0_66/docs/technotes/guides/javac/index.html
+    - file://nas/Distribution/ref/java/jdk1.8.0_66/docs/technotes/tools/windows/java.html
+    - file://nas/Distribution/ref/java/jdk1.8.0_66/docs/technotes/guides/jar/index.html
+    - file://nas/Distribution/ref/java/jdk1.8.0_66/docs/technotes/guides/javadoc/index.html
+    - file://nas/Distribution/ref/java/jdk1.8.0_66/docs/technotes/tools/windows/javap.html
+    
+Syntax
+  - http://tutorials.jenkov.com/java/syntax.html
+  - OOP mapping
+    - file://nas/Distribution/ref/java/tutorial/java/concepts/index.html
+  - Type Declaration
+  - members of class - http://tutorials.jenkov.com/java/classes.html
+    - Fields - http://tutorials.jenkov.com/java/fields.html
+    - Methods - http://tutorials.jenkov.com/java/methods.html
+    - Constructors - http://tutorials.jenkov.com/java/constructors.html
+    - Class Initializers - http://tutorials.jenkov.com/java/syntax.html#class-initializers
+    - Inner classes -  http://tutorials.jenkov.com/java/nested-classes.html
+Data Types
+  - Primitive - http://tutorials.jenkov.com/java/data-types.html
+  - Complex - http://tutorials.jenkov.com/java/data-types.html
+  - Primitive Wrappers, Boxing/Unboxing - http://tutorials.jenkov.com/java/data-types.html
+  - Strings - http://tutorials.jenkov.com/java/strings.html
+  - Arrays - http://tutorials.jenkov.com/java/arrays.html
+  - Literals
+  - Enums - http://tutorials.jenkov.com/java/enums.html
+Operators
+    - file://nas/Distribution/ref/java/tutorial/java/nutsandbolts/operators.html
+Control Statements
+    -  http://tutorials.jenkov.com/java/operations.html#program-flow
+        if statements
+        Switch Statements
+        for Loops
+        while Loops
+Access Modifiers
+    - http://tutorials.jenkov.com/java/access-modifiers.html
+Package Declaration
+    -  http://tutorials.jenkov.com/java/packages.html
+Import Statements
+    - http://tutorials.jenkov.com/java/packages.html#importing-classes-from-other-java-packages
+
+Inheritance
+    - http://tutorials.jenkov.com/java/inheritance.html
+Interfaces
+    - http://tutorials.jenkov.com/java/interfaces.html
+Abstract Classes
+    - http://tutorials.jenkov.com/java/abstract-classes.html
+Interfaces vs. Abstract Classes
+    - http://tutorials.jenkov.com/java/interfaces-vs-abstract-classes.html
+
+java.lang -
+    Object - Refer to Java Doc
+    Class - Refer to Java Doc
+    Math - http://tutorials.jenkov.com/java/math-operators-and-math-class.html
+    Number - http://tutorials.jenkov.com/java/math-operators-and-math-class.html
+    String[+Buffer/Builder] - Refer to Java Doc and Jenkov
+    Process - Refer to Java Doc
+    Runtime - Refer to Java Doc
+
+JavaDoc - API
+    - file://nas/Distribution/ref/java/jdk1.8.0_66/docs/api/index.html

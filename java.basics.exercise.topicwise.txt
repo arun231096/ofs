@@ -1,0 +1,283 @@
+Class and object exercise:
+==========================
++ Consider the following class:
+    public class IdentifyMyParts {
+        public static int x = 7;
+        public int y = 3;
+    }
+    - What are the class variables?
+    - What are the instance variables?
+
++ What is the output from the following code:
+    IdentifyMyParts a = new IdentifyMyParts();
+    IdentifyMyParts b = new IdentifyMyParts();
+    a.y = 5;
+    b.y = 6;
+    a.x = 1;
+    b.x = 2;
+    System.out.println("a.y = " + a.y);
+    System.out.println("b.y = " + b.y);
+    System.out.println("a.x = " + a.x);
+    System.out.println("b.x = " + b.x);
+    System.out.println("IdentifyMyParts.x = " + IdentifyMyParts.x);
+
++ What's wrong with the following program? And fix it.
+
+    public class SomethingIsWrong {
+        public static void main(String[] args) {
+            Rectangle myRect;
+            myRect.width = 40;
+            myRect.height = 50;
+            System.out.println("myRect's area is " + myRect.area());
+        }
+    }
+
++ Given the following class, called NumberHolder,
+    write some code that creates an instance of the class and initializes its two member variables with provided values,
+    and then displays the value of each member variable.
+
+    public class NumberHolder {
+        public int anInt;
+        public float aFloat;
+    }
+
++ Compile and run Class1.java. What is the output? 
+    - Refer to Class1.java here - \\nas\Distribution\ref\java\tutorial\java\javaOO\QandE\Class1.java
+
+Inner classes
+=============
++ The program Problem.java doesn't compile. What do you need to do to make it compile? Why?
+    - Refer to Problem.java here - \\nas\Distribution\ref\java\tutorial\java\javaOO\QandE\Problem.java
+
+Data type exercise:
+==================
++ program to store and retrieve four boolean flags using a single int
++ print the type of the result value of following expressions
+  - 100 / 24
+  - 100.10 / 10
+  - 'Z' / 2
+  - 10.5 / 0.5
+  - 12.4 % 5.5
+  - 100 % 56
++ demonstrate what happens when mixing primitive with respective Wrapper types for the above operations
++ demonstrate overloading with Wrapper types
++ print the classname of all the primitive data types (Note: not the wrapper types)
++ To invert the value of a boolean, which operator would you use?
++ What is the value of the following expression, and why?
+     Integer.valueOf(1).equals(Long.valueOf(1))
++ Create a program that reads an unspecified number of integer arguments from the command line and adds them together.
+    For example, suppose that you enter the following: java Adder 1 3 2 10
+    The program should display 16 and then exit. The program should display an error message if the user enters only one argument.
++ Create a program that is similar to the previous one but instead of reading integer arguments, it reads floating-point arguments.
+    It displays the sum of the arguments, using exactly two digits to the right of the decimal point.
+    For example, suppose that you enter the following: java FPAdder 1 1e2 3.0 4.754
+    The program would display 108.75. Depending on your locale, the decimal point might be a comma (,) instead of a period (.).
++ Change MaxVariablesDemo to show minimum values instead of maximum values. You can delete all code related to the variables aChar and aBoolean.
+  What is the output?
+    - Refer to \\nas\Distribution\ref\java\tutorial\java\data\QandE\MaxVariablesDemo.java
+
+Enum exercise:
+==============
++ compare the enum values using equal method and == operator
+
+Operators exercise:
+===================
++ Change the following program to use compound assignments:
+       class ArithmeticDemo {
+
+            public static void main (String[] args){
+
+                 int result = 1 + 2; // result is now 3
+                 System.out.println(result);
+
+                 result = result - 1; // result is now 2
+                 System.out.println(result);
+
+                 result = result * 2; // result is now 4
+                 System.out.println(result);
+
+                 result = result / 2; // result is now 2
+                 System.out.println(result);
+
+                 result = result + 8; // result is now 10
+                 result = result % 7; // result is now 3
+                 System.out.println(result);
+            }
+       }
++ In the following program, explain why the value "6" is printed twice in a row:
+       class PrePostDemo {
+           public static void main(String[] args){
+               int i = 3;
+               i++;
+               System.out.println(i);    // "4"
+               ++i;
+               System.out.println(i);    // "5"
+               System.out.println(++i);  // "6"
+               System.out.println(i++);  // "6"
+               System.out.println(i);    // "7"
+           }
+       }
+
+Control flow exercise:
+======================
++ print fibinocci using for loop, while loop and recursion
++ Consider the following code snippet.
+
+        if (aNumber >= 0)
+            if (aNumber == 0)
+                System.out.println("first string");
+        else System.out.println("second string");
+        System.out.println("third string");
+
+        - What output do you think the code will produce if aNumber is 3?
+
+        Write a test program containing the previous code snippet
+        - and make aNumber 3. What is the output of the program?
+        - Using only spaces and line breaks, reformat the code snippet to make the control flow easier to understand.
+        - Use braces, { and }, to further clarify the code.
+
+
+Inheritance:
+===========
++ demonstrate inheritance, overloading, overriding using Animal, Dog, Cat and Snake class of objects
++ Consider the following two classes:
+    public class ClassA {
+        public void methodOne(int i) {
+        }
+        public void methodTwo(int i) {
+        }
+        public static void methodThree(int i) {
+        }
+        public static void methodFour(int i) {
+        }
+    }
+
+    public class ClassB extends ClassA {
+        public static void methodOne(int i) {
+        }
+        public void methodTwo(int i) {
+        }
+        public void methodThree(int i) {
+        }
+        public static void methodFour(int i) {
+        }
+    }
+    a. Which method overrides a method in the superclass?
+    b. Which method hides a method in the superclass?
+    c. What do the other methods do?
+
+VarArgs exercise:
+================
++ demonstrate overloading with varArgs
+
+java doc exercise:
+==================
++ Use the Java API documentation for the Box class (in the javax.swing package) to help you answer the following questions.
+    - What static nested class does Box define?
+    - What inner class does Box define?
+    - What is the superclass of Box's inner class?
+    - Which of Box's nested classes can you use from any class?
+    - How do you create an instance of Box's Filler class?
++ What methods would a class that implements the java.lang.CharSequence interface have to implement?
++ What Integer method can you use to convert an int into a string that expresses the number in hexadecimal?
+  For example, what method converts the integer 65 into the string "41"?
++ What Integer method would you use to convert a string expressed in base 5 into the equivalent int?
+  For example, how would you convert the string "230" into the integer value 65? Show the code you would use to accomplish this task.
++ What Double method can you use to detect whether a floating-point number has the special value Not a Number (NaN)?
+
+Package exercise:
+=================
+- (Refer following location for source location \\nas\Distribution\ref\java\tutorial\java\package\QandE\question\)
+
++ Assume you have written some classes. Belatedly, you decide they should be split into three packages, as listed in the following table.
+  Furthermore, assume the classes are currently in the default package (they have no package statements).
+        Package Name    Class Name
+        mygame.server   Server
+        mygame.shared   Utilities
+        mygame.client   Client
+    - Which line of code will you need to add to each source file to put each class in the right package?
+    - To adhere to the directory structure, you will need to create some subdirectories in the development directory and
+      put source files in the correct subdirectories. What subdirectories must you create? Which subdirectory does each source file go in?
+    - Do you think you'll need to make any other changes to the source files to make them compile correctly? If so, what?
+
++ Download the source files as listed here.
+        Client
+        Server
+        Utilities
+    - Implement the changes you proposed in questions 1 through 3 using the source files you just downloaded.
+    - Compile the revised source files.
+
+
+Interfaces:
+===========
++ What methods would a class that implements the java.lang.CharSequence interface have to implement?
++ What is wrong with the following interface? and fix it.
+    public interface SomethingIsWrong {
+        void aMethod(int aValue){
+            System.out.println("Hi Mom");
+        }
+    }
++ Is the following interface valid?
+    public interface Marker {}
++ Write a class that implements the CharSequence interface found in the java.lang package.
+  Your implementation should return the string backwards. Write a small main method to test your class; make sure to call all four methods.
+
+Abstract class:
+===============
++ Demonstrate abstract classes using Shape class.
+    - Shape class should have methods to calculate area and perimeter
+    - Define two more class Circle and Square by extending Shape class and implement the calculation for each class respectively
+
+java.lang class exercise:
+=========================
++ print the absolute path of the .class file of the current class
++ open the source file of the running class in Notepad++ - do NOT hardcode/specify the source file in the code; find the source file using APIs
++ demonstrate object equality using Object.equals() vs ==, using String objects
++ open the source file of the running class in Notepad++ - do NOT hardcode/specify the source file in the code; find the source file using APIs
+
+String exercise:
+================
++ sort and print following String[] alphabetically ignoring case. Also convert and print even indexed Strings into uppercase
+       { "Madurai", "Thanjavur", "TRICHY", "Karur", "Erode", "trichy", "Salem" }
++ The following code creates one array and one string object. How many references to those objects exist after the code executes?
+  Is either object eligible for garbage collection?
+    ...
+    String[] students = new String[10];
+    String studentName = "Peter Parker";
+    students[0] = studentName;
+    studentName = null;
++ What is the initial capacity of the following string builder?
+    StringBuilder sb = new StringBuilder("Able was I ere I saw Elba.");
+
++ Consider the following string:
+    String hannah = "Did Hannah see bees? Hannah did.";
+    - What is the value displayed by the expression hannah.length()?
+    - What is the value returned by the method call hannah.charAt(12)?
+    - Write an expression that refers to the letter b in the string referred to by hannah.
+
++ How long is the string returned by the following expression? What is the string?
+"Was it a car or a cat I saw?".substring(9, 12)
++ In the following program, called ComputeResult, what is the value of result after each numbered line executes?
+    public class ComputeResult {
+        public static void main(String[] args) {
+            String original = "software";
+            StringBuilder result = new StringBuilder("hi");
+            int index = original.indexOf('a');
+
+    /*1*/   result.setCharAt(0, original.charAt(0));
+    /*2*/   result.setCharAt(1, original.charAt(original.length()-1));
+    /*3*/   result.insert(1, original.charAt(4));
+    /*4*/   result.append(original.substring(1,4));
+    /*5*/   result.insert(3, (original.substring(index, index+2) + " "));
+
+            System.out.println(result);
+        }
+    }
++ Show two ways to concatenate the following two strings together to get the string "Hi, mom.":
+    String hi = "Hi, ";
+    String mom = "mom.";
++ Write a program that computes your initials from your full name and displays them.
+
+Misc:
+=====
++ write a batch script to execute all your sample programs

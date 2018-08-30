@@ -13,7 +13,8 @@ Write a program to,
 + demonstrate varargs param with other params
 + demonstrate object equality using Object.equals() vs ==, using String objects
 + print fibinocci using for loop, while loop and recursion
-+ create a Employee class with properties: id and name, a constructor which initializes name, a mechanism to automatically assign id by incrementing the previous id. Create and print 10 employee objects using Object.toString()
++ create a Employee class with properties: id and name, a constructor which initializes name, a mechanism to automatically assign id by incrementing 
+  the previous id. Create and print 10 employee objects using Object.toString()
 + list down the differences between the classname of arrays of primitive types and String
 + print the type of the result value of following expressions
   - 100 / 24
