@@ -1,6 +1,11 @@
 package com.ofs.training;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
+import java.lang.reflect.Parameter;
+import java.lang.reflect.Type;
 
 public class Myjavap {
 
@@ -18,130 +23,116 @@ public class Myjavap {
             displayClassHeader(classname);
 
             //display fields
-//            displayFields(classname);
-
-            //display methods
-//            displayMethods(classname);
+            displayFields(classname);
 
             //display Constructors
-//            displayConstructors(classname);
+            displayConstructors(classname);
+            
+            //display methods
+            displayMethods(classname);
 
             //display inner classes
 //            displayInnerClasess(classname);
 
 
-            System.out.println("}");
+            out("}", "");
     }
-    private void displayInnerClasess(Class<?> classname) {
-
-            Class<?>[] declaredClasess = classname.getDeclaredClasses();
-            for (Class<?> declaredclass : declaredClasess) {
-                System.out.println(declaredclass);
-            }
-    }
+    
     private void displayClassHeader (Class<?> classname) {
 
         StringBuilder classHeader = new StringBuilder();
         //append the modifier name of the class to the classheader
         classHeader.append(parseModifier(classname.getModifiers()));
         //append the class name to the class header
-        classHeader.append(classname.getSimpleName());
+        classHeader.append(" "+classname.getSimpleName());
         //append the interfaces to the class header
         classHeader.append(interfacesAndSuperClasess(classname));
-
-        out("%s",classHeader.toString());
+        //display the class header
+        out("%s {",classHeader.toString());
     }
+    
     private String interfacesAndSuperClasess(Class<?> classname) {
 
         StringBuilder interfacesAndClass = new StringBuilder();
         Class[] interfaces = classname.getInterfaces();
         if (interfaces.length > 0) { interfacesAndClass.append(" implements");}
         for (Class inter_face : interfaces) {
-
+        	interfacesAndClass.append(" "+inter_face.getName()+",");
         }
-        return null;
+        interfacesAndClass.replace(interfacesAndClass.length() -1, interfacesAndClass.length(), "");
+        Class superClass= classname.getSuperclass();
+        if(superClass != null) {
+
+        	interfacesAndClass.append(" extends");
+        	interfacesAndClass.append(" "+superClass.getName());
+        } 
+        return interfacesAndClass.toString();
 
     }
+
+    private void displayFields(Class<?> classname) {
+          Field[] fields = classname.getFields();
+          StringBuilder stringFields = new StringBuilder(); 
+          for(Field field : fields) {
+              stringFields.append(parseModifier(field.getModifiers()));
+              stringFields.append(" " + field.getType());
+              stringFields.append(" " + field.getName() + ";\n");
+          }
+          out(" %s", stringFields.toString());
+    }
+    private void displayConstructors (Class<?> classname) {
+
+    	StringBuilder stringConstructor = new StringBuilder();
+          Constructor[] constructors = classname.getConstructors();
+          for(Constructor<?> constructor : constructors) {
+        	  stringConstructor.append(parseModifier(constructor.getModifiers()));
+        	  stringConstructor.append(" " +constructor.getName() + "(");
+        	  Type[] types = constructor.getParameterTypes();
+        	  if (types.length > 0) { 
+        		  stringConstructor.append(findType(types)); 
+        		  stringConstructor.replace(stringConstructor.length() -2, stringConstructor.length(), "");
+        	  }
+        	  stringConstructor.append(");\n ");
+          }
+          out(" %s",stringConstructor.toString());
+    }
+    
+    private void displayMethods(Class<?> classname) {
+    	
+    	StringBuilder stringMethod = new StringBuilder();
+        Method[] methods = classname.getMethods();
+        for(Method method : methods) {
+        	stringMethod.append(parseModifier(method.getModifiers()));
+        	stringMethod.append(" "+method.getReturnType());
+        	stringMethod.append(" " +method.getName() + "(");
+        	Type[] types = method.getParameterTypes();
+      	  if (types.length > 0) { 
+    		  stringMethod.append(findType(types)); 
+    		  stringMethod.replace(stringMethod.length() -2, stringMethod.length(), "");
+    	  }
+      	  	stringMethod.append(");\n ");
+      }
+      out(" %s", stringMethod.toString());
+    }
+    
     private String parseModifier(int modifer) {
 
         return (Modifier.toString(modifer));
     }
-
-//    private void displayFields(Class<?> classname) {
-//          Field[] fields = classname.getDeclaredFields();
-//          for(Field field : fields) {
-//              System.out.print(Modifier.toString(field.getModifiers()));
-//              System.out.print(" "+field.getGenericType());
-//              System.out.print(" "+field.getName());
-//              System.out.println(" "+field. getType());
-//          }
-//    }
-//    private void displayConstructors (Class<?> classname) {
-//
-//          Constructor[] constructors = classname.getConstructors();
-//          for(Constructor<?> constructor : constructors) {
-//              int modifiers = constructor.getModifiers();
-//              System.out.print(""+Modifier.toString(modifiers));
-//              System.out.print(" "+constructor.getName()+" (");
-//              Type[] types = constructor.getGenericParameterTypes();
-//              for (Type type : types) {
-//                  System.out.print(type.getTypeName()+" ");
-//              }
-//              System.out.println(")");
-//          }
-//    }
-//    private void displayMethods(Class<?> classname) {
-//
-//        Method[] methods = classname.getDeclaredMethods();
-//        for(Method method : methods) {
-//            int modifiers = method.getModifiers();
-//            System.out.print(""+Modifier.toString(modifiers));
-//            Type returntype = method.getGenericReturnType();
-//            System.out.print(" "+returntype.getTypeName());
-//            System.out.print(" "+method.getName()+"(");
-//            Type[] types = method.getGenericParameterTypes();
-//            for (Type type : types) {
-//                System.out.print(type.getTypeName()+" ");
-//            }
-//         System.out.println(")");
-//      }
-//    }
+    
+    private StringBuilder findType(Type[] types) {
+		
+    	StringBuilder stringType = new StringBuilder();
+    	for (Type type : types){       		  
+    		stringType.append(type.getTypeName()+ ", ");
+      	  }
+    	return stringType;
+    	
+    }
+    
     private void out(String format, String values) {
 
         System.out.format(format, values);
         System.out.println();
     }
 }
-
-
-
-
-//Field[] fields = classname.getDeclaredFields();
-//for(Field field : fields) {
-//    System.out.println(field);
-//}
-//Constructor[] constructors = classname.getConstructors();
-//for(Constructor constructor : constructors) {
-//    //System.out.println(method);
-//    int modifiers = constructor.getModifiers();
-//    System.out.print(""+Modifier.toString(modifiers));
-//    System.out.print(" "+constructor.getName()+"(");
-//    Type[] types = constructor.getGenericParameterTypes();
-//    for (Type type : types) {
-//        System.out.print(type.getTypeName()+" ");
-//    }
-//    System.out.println(")");
-//}
-//Method[] methods = classname.getDeclaredMethods();
-//for(Method method : methods) {
-//    int modifiers = method.getModifiers();
-//    System.out.print(""+Modifier.toString(modifiers));
-//    Type returntype = method.getGenericReturnType();
-//    System.out.print(" "+returntype.getTypeName());
-//    System.out.print(" "+method.getName()+"(");
-//    Type[] types = method.getGenericParameterTypes();
-//    for (Type type : types) {
-//        System.out.print(type.getTypeName()+" ");
-//    }
-//    System.out.println(")");
-//}
