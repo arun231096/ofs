@@ -57,14 +57,14 @@ public class Myjavap {
         Class[] interfaces = classname.getInterfaces();
         if (interfaces.length > 0) { interfacesAndClass.append(" implements");}
         for (Class inter_face : interfaces) {
-        	interfacesAndClass.append(" "+inter_face.getName()+",");
+            interfacesAndClass.append(" "+inter_face.getName()+",");
         }
         interfacesAndClass.replace(interfacesAndClass.length() -1, interfacesAndClass.length(), "");
         Class superClass= classname.getSuperclass();
         if(superClass != null) {
 
-        	interfacesAndClass.append(" extends");
-        	interfacesAndClass.append(" "+superClass.getName());
+            interfacesAndClass.append(" extends");
+            interfacesAndClass.append(" "+superClass.getName());
         } 
         return interfacesAndClass.toString();
 
@@ -82,35 +82,35 @@ public class Myjavap {
     }
     private void displayConstructors (Class<?> classname) {
 
-    	StringBuilder stringConstructor = new StringBuilder();
+        StringBuilder stringConstructor = new StringBuilder();
           Constructor[] constructors = classname.getConstructors();
           for(Constructor<?> constructor : constructors) {
-        	  stringConstructor.append(parseModifier(constructor.getModifiers()));
-        	  stringConstructor.append(" " +constructor.getName() + "(");
-        	  Type[] types = constructor.getParameterTypes();
-        	  if (types.length > 0) { 
-        		  stringConstructor.append(findType(types)); 
-        		  stringConstructor.replace(stringConstructor.length() -2, stringConstructor.length(), "");
-        	  }
-        	  stringConstructor.append(");\n ");
+              stringConstructor.append(parseModifier(constructor.getModifiers()));
+              stringConstructor.append(" " +constructor.getName() + "(");
+              Type[] types = constructor.getParameterTypes();
+              if (types.length > 0) { 
+                  stringConstructor.append(findType(types)); 
+                  stringConstructor.replace(stringConstructor.length() -2, stringConstructor.length(), "");
+              }
+              stringConstructor.append(");\n ");
           }
           out(" %s",stringConstructor.toString());
     }
     
     private void displayMethods(Class<?> classname) {
-    	
-    	StringBuilder stringMethod = new StringBuilder();
+        
+        StringBuilder stringMethod = new StringBuilder();
         Method[] methods = classname.getMethods();
         for(Method method : methods) {
-        	stringMethod.append(parseModifier(method.getModifiers()));
-        	stringMethod.append(" "+method.getReturnType());
-        	stringMethod.append(" " +method.getName() + "(");
-        	Type[] types = method.getParameterTypes();
-      	  if (types.length > 0) { 
-    		  stringMethod.append(findType(types)); 
-    		  stringMethod.replace(stringMethod.length() -2, stringMethod.length(), "");
-    	  }
-      	  	stringMethod.append(");\n ");
+            stringMethod.append(parseModifier(method.getModifiers()));
+            stringMethod.append(" "+method.getReturnType());
+            stringMethod.append(" " +method.getName() + "(");
+            Type[] types = method.getParameterTypes();
+          if (types.length > 0) { 
+              stringMethod.append(findType(types)); 
+              stringMethod.replace(stringMethod.length() -2, stringMethod.length(), "");
+          }
+            stringMethod.append(");\n ");
       }
       out(" %s", stringMethod.toString());
     }
@@ -121,13 +121,13 @@ public class Myjavap {
     }
     
     private StringBuilder findType(Type[] types) {
-		
-    	StringBuilder stringType = new StringBuilder();
-    	for (Type type : types){       		  
-    		stringType.append(type.getTypeName()+ ", ");
-      	  }
-    	return stringType;
-    	
+        
+        StringBuilder stringType = new StringBuilder();
+        for (Type type : types){              
+            stringType.append(type.getTypeName()+ ", ");
+          }
+        return stringType;
+        
     }
     
     private void out(String format, String values) {

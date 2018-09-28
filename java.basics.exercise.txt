@@ -28,3 +28,206 @@ Write a program to,
 + demonstrate overloading with varargs
 + demonstrate overloading with Wrapper types
 - print the classname of all the primitive data types (Note: not the wrapper types)
+
+
+lang 
+
+/*
+
+import java.time.LocalDate;
+import java.time.chrono.IsoChronology;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Person {
+
+    public enum Sex {
+        MALE, FEMALE
+    }
+
+    String name;
+    LocalDate birthday;
+    Sex gender;
+    String emailAddress;
+
+    Person(String nameArg, LocalDate birthdayArg,
+        Sex genderArg, String emailArg) {
+        name = nameArg;
+        birthday = birthdayArg;
+        gender = genderArg;
+        emailAddress = emailArg;
+    }
+
+    public int getAge() {
+        return birthday
+            .until(IsoChronology.INSTANCE.dateNow())
+            .getYears();
+    }
+
+    public void printPerson() {
+      System.out.println(name + ", " + this.getAge());
+    }
+
+    public Sex getGender() {
+        return gender;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public LocalDate getBirthday() {
+        return birthday;
+    }
+
+    public static int compareByAge(Person a, Person b) {
+        return a.birthday.compareTo(b.birthday);
+    }
+
+    public static List<Person> createRoster() {
+
+        List<Person> roster = new ArrayList<>();
+        roster.add(
+            new Person(
+            "Fred",
+            IsoChronology.INSTANCE.date(1980, 6, 20),
+            Person.Sex.MALE,
+            "fred@example.com"));
+        roster.add(
+            new Person(
+            "Jane",
+            IsoChronology.INSTANCE.date(1990, 7, 15),
+            Person.Sex.FEMALE, "jane@example.com"));
+        roster.add(
+            new Person(
+            "George",
+            IsoChronology.INSTANCE.date(1991, 8, 13),
+            Person.Sex.MALE, "george@example.com"));
+        roster.add(
+            new Person(
+            "Bob",
+            IsoChronology.INSTANCE.date(2000, 9, 12),
+            Person.Sex.MALE, "bob@example.com"));
+
+        return roster;
+    }
+
+}
+
+
+*/
+
+filter/predicates
+
+    Write a program to filter the Person, who are male and age greater than 21
+
+map
+
+    Write a program to print minimal Person with name and email address from the Person class using java.util.Stream<T>#map
+
+findFirst/last/any
+
+    Write a program to filter the Person, who are male and
+
+        find the first person from the filtered persons
+        find the last person from the filtered persons
+        find random person from the filtered persons
+
+sum/Max/Min
+
+    Consider a following code snippet:
+        List<Integer> randomNumbers = Array.asList( {1, 6, 10, 25, 78} );
+    Find the sum of all the numbers in the list using java.util.Stream
+    Find the maximum of all the numbers in the list using java.util.Stream
+    Find the minimum of all the numbers in the list using java.util.Stream
+
+Collectors
+
+    Write a program to collect the minimal person with name and email address from the Person class using java.util.Stream<T>#map as List
+
+Reducer methods(toInt, toLong)
+
+    Write a program to find the average age of all the Person in the person List
+
+GroupBy, duplicate removal
+
+    Consider a following code snippet
+        List<Integer> randomNumbers = Array.asList( {1, 6, 10, 1, 25, 78, 10, 25} );
+    Get the non-duplicate values from the above list using java.util.Stream API
+
+forEach
+
+    Print all the persons in the roster using java.util.Stream<T>#forEach
+
+lambda
+
+    sort the roster list based on the Person's age in descending order using Comparator
+
+Iterator
+
+    Iterate the roster list in Persons class and and print the Person without using forLoop/Stream
+
+Sorting
+
+    sort the roster list based on the Person's age in descending order using java.util.Stream
+
+Addition/Update/Deletion of element to and from collections (addAll(), removeAll, add(), remove(), size())
+
+    Consider the following code snippet:
+        ArrayList<Person> newRoster = new ArrayList<>(4);
+        newRoster.add(new Person("John",
+                                 IsoChronology.INSTANCE.date(1980, 6, 20),
+                                 Person.Sex.MALE,
+                                 "john@example.com"));
+        newRoster.add(new Person("Jade",
+                                 IsoChronology.INSTANCE.date(1990, 7, 15),
+                                 Person.Sex.FEMALE,
+                                 "jade@example.com"));
+        newRoster.add(new Person("Donald",
+                                 IsoChronology.INSTANCE.date(1991, 8, 13),
+                                 Person.Sex.MALE,
+                                 "donald@example.com"));
+        newRoster.add(new Person("Bob",
+                                 IsoChronology.INSTANCE.date(2000, 9, 12),
+                                 Person.Sex.MALE,
+                                 "bob@example.com"));
+    Create a roster from the Person class and add each Person in the newRoster to the existing list and print the new roster List
+    Print the number of Persons in roster list after the above addition
+    Remove the all the Person in the roster list
+
+Contains
+
+    Consider the following Person:
+        new Person("Bob", IsoChronology.INSTANCE.date(2000, 9, 12), Person.Sex.MALE, "bob@example.com")
+    Check if the above Person is in the roster list obtained from Person class
+
+retain() vs remove()
+
+    Consider the code snippet of newRoster above
+    Remove the only Person who are in the newRoster from the roster list
+    Remove the following Person from the roster List:
+        new Person("Bob", IsoChronology.INSTANCE.date(2000, 9, 12), Person.Sex.MALE, "bob@example.com")
+        
+        
+io :- 
+
+1. Write an example that counts the number of times a particular character, such as e, appears in a file. 
+   The character can be specified at the command line. You can use xanadu.txt as the input file.
+   Refer to the input file  here: \\nas\distribution\ref\java\tutorial\essential\io\examples\xanadu.txt
+2. Read a any text file using BufferedReader and print the content of the file
+3. Write some String content to a file using appropriate OutputStream
+4. Write some String content to console using appropriate Writer
+5. Read a file using java.io.File
+6. Read a file using java.nio.Files using Paths
+7. Reading a CSV file using java.nio.Files API as List string with each row in CSV as a String
+8. Given a path, check if path is file or directory
+9. Write a program to convert InputStream to String and vice versa
+10. Write a program to convert InputStream  Object to inputStream and vice versa    
+11. Write a program to get the number of files and number of directories in a given directory
+12. Write a program get the permissions allowed for a file
+13. Write a program get the file names of all file with specific extension in a directory
+14. Write a program to check if two paths are same.
