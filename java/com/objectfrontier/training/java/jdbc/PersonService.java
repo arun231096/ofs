@@ -19,12 +19,12 @@ public class PersonService {
     private Connection con;
     private PreparedStatement createPerson;
     private PreparedStatement readPerson;
-    private PreparedStatement checkAddress;
+//    private PreparedStatement checkAddress;
     private PreparedStatement updatePersonName;
     private PreparedStatement updatePersonEmail;
     private PreparedStatement updatePersonDob;
     private PreparedStatement deletePerson;
-    private PreparedStatement readAllPerson;
+//    private PreparedStatement readAllPerson;
     private ResultSet result;
 
     public PersonService() throws SQLException {
@@ -36,9 +36,9 @@ public class PersonService {
          readPerson =  con.prepareStatement("SELECT name, email, address_id, brith_date, created_date"
                                             + "FROM person"
                                            + "WHERE id = ?");
-         checkAddress = con.prepareStatement("SELECT address_id "
-                                             + "FROM person "
-                                            + "WHERE id = ?");
+//         checkAddress = con.prepareStatement("SELECT address_id "
+//                                             + "FROM person "
+//                                            + "WHERE id = ?");
          updatePersonName = con.prepareStatement("UPDATE person "
                                                   + "SET name = ?"
                                                 + "WHERE id = ?");
@@ -50,8 +50,8 @@ public class PersonService {
                                                + "WHERE id = ?");
          deletePerson = con.prepareStatement("DELETE person "
                                             + "WHERE id = ?");
-         readAllPerson = con.prepareStatement("SELECT name, email, address_id, brith_date, created_date "
-                                              + "FROM person");
+//         readAllPerson = con.prepareStatement("SELECT name, email, address_id, brith_date, created_date "
+//                                              + "FROM person");
     }
 
     public Connection getCon() {
@@ -81,7 +81,7 @@ public class PersonService {
 
     public void read (String email, boolean includeAddress) throws SQLException {
 
-        result = readAllPerson.executeQuery();
+        result = readPerson.executeQuery();
         if (includeAddress == true) {
             addr.read(result.getInt("address_id"));
             name = result.getString("name");
@@ -130,5 +130,23 @@ public class PersonService {
         }
     }
 
-
+    public void delete(int id) throws SQLException {
+    	
+    	deletePerson.setInt(1, id);
+    	if (deletePerson.execute()) {
+    		System.out.println("Person Deleted");
+    	} else {
+    		System.out.println("Error in deletion");
+    	}
+    }
+    
+    public void close () throws SQLException {
+    	
+    	con.close();
+    	readPerson.close();
+    	updatePersonDob.close();
+    	updatePersonEmail.close();
+    	updatePersonName.close();
+    	createPerson.close();
+    }
 }
