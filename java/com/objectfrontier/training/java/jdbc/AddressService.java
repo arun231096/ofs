@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.objectfrontier.training.java.jdbc.pojo.Address;
+
 public class AddressService {
 
     String street;
@@ -54,24 +56,20 @@ public class AddressService {
         this.con = con;
     }
 
-    public int create (String street, String city, int postal_code) throws SQLException {
+    public int create (Address address) throws SQLException {
 
-        int address_id;
-        checkAddress.setString(1, street);
-        checkAddress.setString(2, city);
-        checkAddress.setInt(3, postal_code);
-        result = checkAddress.executeQuery();
-        if ( (address_id = result.getInt("id")) != 0) {
-            return address_id;
-        } else {
-            createAddress.setString(1, street);
-            createAddress.setString(2, city);
-            createAddress.setInt(3, postal_code);
-            if (createAddress.execute()) {
-                result = checkAddress.executeQuery();
-                return result.getInt("id");
+        int address_id = 0;
+            createAddress.setString(1, address.getStreet());
+            createAddress.setString(2, address.getCity());
+            createAddress.setInt(3, address.getPostal_code());
+            if (createAddress.executeUpdate() > 0) {
+                System.out.println("created");
+                ResultSet result = checkAddress.executeQuery();
+                if (result.next())
+                    address_id = result.getInt("id");
+                System.out.println("Address created " + address_id);
+                return address_id;
             }
-        }
         return 0;
     }
 
@@ -79,9 +77,11 @@ public class AddressService {
 
         readAddress.setInt(1, id);
         ResultSet result = readAddress.executeQuery();
+        if (result.next()) {
         street = result.getString("street");
         city = result.getString("city");
         postal_code = result.getInt("postal_code");
+        }
     }
 
     public ResultSet readAll () throws SQLException {

@@ -8,13 +8,12 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
+import com.objectfrontier.training.java.jdbc.pojo.Address;
+import com.objectfrontier.training.java.jdbc.pojo.Person;
+
 public class PersonService {
 
-    String name;
-    String email;
-    Date dob;
-    LocalDateTime createdDate;
-    int address_id;
+    Person person;
     AddressService addr;
     private Connection con;
     private PreparedStatement createPerson;
@@ -30,6 +29,7 @@ public class PersonService {
     public PersonService() throws SQLException {
 
          addr = new AddressService();
+         person = new Person();
          setCon(ConnectionManagement.getConnection());
          createPerson = con.prepareStatement("INSERT INTO person (name, email, address_id, birth_date, created_date)"
                                            + "VALUES (?,?,?,?,?)");
@@ -62,39 +62,48 @@ public class PersonService {
         this.con = con;
     }
 
-    public void create(String name, String email, Date birth_date, String street, String city, int postal_code) throws SQLException {
+    public void create(Person person, Address address) throws SQLException {
 
-        int address_id = addr.create(street, city, postal_code);
-        createdDate = LocalDateTime.now();
+//        System.out.println(name+email+street+city+postal_code+birth_date);
+        int address_id = addr.create(address);
+        System.out.println(address_id);
+        LocalDateTime createdDate = LocalDateTime.now();
         Timestamp stamp = Timestamp.valueOf(createdDate);
-        createPerson.setString(1, name);
-        createPerson.setString(2, email);
+        createPerson.setString(1, person.getName());
+        createPerson.setString(2, person.getEmail());
         createPerson.setInt(3, address_id);
-        createPerson.setDate(4, birth_date);
+        createPerson.setDate(4, person.getDob());
         createPerson.setTimestamp(5, stamp);
-        if (createPerson.execute()) {
+        try {
+        if (createPerson.executeUpdate() > 0) {
             System.out.println("Person Created");
-        } else {
-            System.out.println("Duplicate value cannot be insert");
+        }
+        } catch (Exception e) {
+            System.out.println("Dupilcate Entry");
         }
     }
 
-    public void read (String email, boolean includeAddress) throws SQLException {
+    public void read (int id, boolean includeAddress) throws SQLException {
 
+        readPerson.setInt(1, id);
         result = readPerson.executeQuery();
         if (includeAddress == true) {
-            addr.read(result.getInt("address_id"));
-            name = result.getString("name");
-            email = result.getString("email");
-            dob = result.getDate("birth_date");
-            Timestamp stamp = result.getTimestamp("created_date");
-            createdDate = stamp.toLocalDateTime();
+            if (result.next()) {
+                addr.read(result.getInt("address_id"));
+                person.setName(result.getString("name"));
+                person.setEmail(result.getString("email"));
+                person.setDob(result.getDate("birth_date"));
+                Timestamp stamp = result.getTimestamp("created_date");
+                person.setCreatedDate(stamp.toLocalDateTime());
+            }
         } else {
-            name = result.getString("name");
-            email = result.getString("email");
-            dob = result.getDate("birth_date");
-            Timestamp stamp = result.getTimestamp("created_date");
-            createdDate = stamp.toLocalDateTime();
+            if (result.next()) {
+                person.setName(result.getString("name"));
+                person.setEmail(result.getString("email"));
+                person.setDob(result.getDate("birth_date"));
+                Timestamp stamp = result.getTimestamp("created_date");
+                person.setCreatedDate(stamp.toLocalDateTime());
+            }
         }
     }
 
@@ -131,7 +140,7 @@ public class PersonService {
     }
 
     public void delete(int id) throws SQLException {
-    	
+
     	deletePerson.setInt(1, id);
     	if (deletePerson.execute()) {
     		System.out.println("Person Deleted");
@@ -139,9 +148,9 @@ public class PersonService {
     		System.out.println("Error in deletion");
     	}
     }
-    
+
     public void close () throws SQLException {
-    	
+
     	con.close();
     	readPerson.close();
     	updatePersonDob.close();
