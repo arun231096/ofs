@@ -1,0 +1,133 @@
+
+<web-app>
+
+<!-- Error Filter -->
+ <filter>
+        <filter-name>ErrorFilter</filter-name>
+        <filter-class>com.objectfrontier.training.webservices.filter.ErrorFilter</filter-class>
+</filter>
+
+<filter-mapping> 
+        <filter-name>ErrorFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+</filter-mapping>
+
+<!-- Transaction Filter -->
+<filter>
+    <filter-name>TransactionFilter</filter-name>
+    <filter-class>com.objectfrontier.training.webservices.filter.TransactionFilter</filter-class>
+</filter>
+
+<filter-mapping> 
+        <filter-name>TransactionFilter</filter-name>
+        <url-pattern>/do/*</url-pattern>
+</filter-mapping>
+
+<!-- Authentication Filter -->
+<filter>
+    <filter-name>AuthenticationFilter</filter-name>
+    <filter-class>com.objectfrontier.training.webservices.filter.AuthenticationFilter</filter-class>
+</filter>
+
+<filter-mapping> 
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/do/login</url-pattern>
+</filter-mapping>
+
+<filter-mapping> 
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/do/person/*</url-pattern>
+</filter-mapping>
+
+<filter-mapping> 
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/do/address/*</url-pattern>
+</filter-mapping>
+
+<!-- Authorization Filter -->
+<filter>
+    <filter-name>AuthorizationFilter</filter-name>
+    <filter-class>com.objectfrontier.training.webservices.filter.AuthorizationFilter</filter-class>
+</filter>
+
+<filter-mapping> 
+        <filter-name>AuthorizationFilter</filter-name>
+        <url-pattern>/do/person/*</url-pattern>
+</filter-mapping>
+
+<filter-mapping> 
+        <filter-name>AuthorizationFilter</filter-name>
+        <url-pattern>/do/address/*</url-pattern>
+</filter-mapping>
+
+<!-- Authentication Servlet -->
+<servlet>
+  <servlet-name>AuthenticationServlet</servlet-name>
+  <servlet-class>com.objectfrontier.training.webservices.servlet.auth.AuthenticationServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>AuthenticationServlet</servlet-name>
+  <url-pattern>/do/login</url-pattern>
+</servlet-mapping>
+
+<!-- Service Servlet -->
+<servlet>
+  <servlet-name>PersonServlet</servlet-name>
+  <servlet-class>com.objectfrontier.training.webservices.servlet.business.PersonServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>PersonServlet</servlet-name>
+  <url-pattern>/do/person</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>AddressServlet</servlet-name>
+  <servlet-class>com.objectfrontier.training.webservices.servlet.business.AddressServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>AddressServlet</servlet-name>
+  <url-pattern>/do/address</url-pattern>
+</servlet-mapping>
+
+</web-app>
+
+<!-- 
+<servlet>
+  <servlet-name>PersonServlet</servlet-name>
+  <servlet-class>com.objectfrontier.training.webservices.servlet.business.PersonServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>PersonServlet</servlet-name>
+  <url-pattern>/do/person</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>AddressServlet</servlet-name>
+  <servlet-class>com.objectfrontier.training.webservices.servlet.business.AddressServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>AddressServlet</servlet-name>
+  <url-pattern>/do/address</url-pattern>
+</servlet-mapping>
+ -->
+
+
+<!-- <servlet>
+  <servlet-name>demo</servlet-name>
+  <servlet-class>com.objectfrontier.training.webservices.servlet.business.DemoServlet</servlet-class>
+</servlet>
+  
+<servlet-mapping>
+  <servlet-name>demo</servlet-name>
+  <url-pattern>/do/*</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+  <servlet-name>demo</servlet-name>
+  <url-pattern>/do/demo/demo</url-pattern>
+</servlet-mapping> -->
