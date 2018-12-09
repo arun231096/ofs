@@ -1,0 +1,125 @@
+<html>
+  <head>
+    <title> Dashboard </title>
+    <link rel="icon" href="../assets/img/logo.png" type="image/png" />
+    <link rel="stylesheet" type="text/css" href="../styles/dashboard.css" />
+    <script src="../scripts/service.js"></script>
+  </head>
+  <body id="bg" onload="readPerson()">
+    <div id="address-container" class="container">
+      <div class="row">
+        <div id="nav-bar" class="navbar">
+        <div class="list-link">
+            <div id="person-link" class="link">
+              <a href="#" onclick="displayPersonFiled()" class="h-link"> Person</a>
+            </div>
+            <div id="address-link" class="link">
+              <a href="#" onclick="displayAddressFiled()" class="h-link"> Address</a>
+            </div>
+          </div>
+        </div>
+        <div id="details-container" class="details">
+          <div align="right" class="div" id="search-bar">
+            <input type="text" class="input srch" name="search" id="search-box" placeholder="Search"/>
+          </div>
+          <div id="address-pojo" style=" display:none;">
+          <div class="detail-table" id="table-div">
+            <table class="address-detail" id="address-table">
+              <tr id="header">
+                <th id="sno">S.no</th>
+                <th id="street">Street</th>
+                <th id="city">City</th>
+                <th id="postal-code">Postal Code</th>
+              </tr>
+            </table>
+          </div>
+          <div class="add div" align="right">
+            <button class="button" id="add-button" onclick= "createAddress()">Add</button>
+          </div>
+          <div class="div insert" id="address-manipulation">
+            <!-- <form id="address-form" class="form"> -->
+            <div class="div form">
+                <input type="text" class="input" name="street" id="istreet" placeholder="Enter street" />
+                <input type="text" class="input" name="city" id="icity" placeholder="Enter city" />
+                <input type="text" class="input" name="postal-code" id="ipostal-code" placeholder="Enter postal code" />
+                <div align="right" class="div save">
+                  <button class="button" id="save-button">Save</button>
+                </div>
+            </div>
+            <!-- </form> -->
+          </div>
+          <div class="div insert" id="address-creation" style="display:none;">
+            <!-- <form id="address-form" class="form"> -->
+            <div class="div form">
+                <input type="text" class="input" name="street" id="ac-street" placeholder="Enter street" />
+                <input type="text" class="input" name="city" id="ac-city" placeholder="Enter city" />
+                <input type="text" class="input" name="postal-code" id="ac-postal-code" placeholder="Enter postal code" />
+                <div align="right" class="div save">
+                  <button class="button" id="save-button">Save</button>
+                </div>
+            </div>
+            <!-- </form> -->
+          </div>
+          </div>
+          <!-- Person  -->
+          <div id="person-pojo">
+            <div class="detail-table" id="table-div">
+            <table class="person-detail" id="person-table">
+              <tr id="header">
+                <th id="sno">S.no</th>
+                <th id="sno">Emp.Id</th>
+                <th id="firstname">First Name</th>
+                <th id="lastname">last Name</th>
+                <th id="dob">DOB</th>
+                <th id="email">Email</th>
+                <th id="admin">Admin</th>
+                <th id="created-date">Join Date</th>
+              </tr>
+            </table>
+          </div>
+          <div class="add div" align="right">
+            <button class="button" id="add-button" onclick= "createPerson()">Add</button>
+          </div>
+          <div class="div insert" id="person-manipulation">
+            <!-- <form id="address-form" class="form"> -->
+            <div class="div form">
+                <input type="text" class="input" name="firstname" id="ifirstname" placeholder="Enter Firstname" />
+                <input type="text" class="input" name="lastname" id="ilastname" placeholder="Enter Lastname" />
+                <input type="text" class="input" name="dob" id="idob" placeholder="Enter DOB" />
+                <input type="text" class="input" name="email" id="iemail" placeholder="Enter Email" />
+                <input type="text" class="input" name="admin" id="iadmin" placeholder="Enter Admin detail" />
+                <input type="text" class="input" name="created-date" id="icreated-date" placeholder="Enter date" />
+                <div align="right" class="div save">
+                  <button class="button" id="save-button">Save</button>
+                </div>
+            </div>
+            <!-- </form> -->
+          </div>
+          <div class="div insert" id="person-creation" style="display:none;">
+            <!-- <form id="address-form" class="form"> -->
+            <div class="div form">
+                <input type="text" class="input" name="firstname" id="pc-firstname" placeholder="Enter Firstname" />
+                <input type="text" class="input" name="lastname" id="pc-lastname" placeholder="Enter Lastname" />
+                <input type="date" class="input" name="dob" id="pc-dob" placeholder="Enter DOB" />
+                <input type="text" class="input" name="email" id="pc-email" placeholder="Enter Email" />
+                <input type="text" class="input" name="admin" id="pc-admin" placeholder="Enter Admin detail" />
+                <input type="password" class="input" name="password" id="pc-password" placeholder="Enter password" />
+                <input type="text" class="input" name="street" id="pc-street" placeholder="Enter street" />
+                <input type="text" class="input" name="city" id="pc-city" placeholder="Enter city" />
+                <input type="text" class="input" name="postalcode" id="pc-postalcode" placeholder="Enter postalcode" />
+                <div align="right" class="div save">
+                  <button class="button" id="save-button">Save</button>
+                </div>
+            </div>
+            <!-- </form> -->
+          </div>
+          </div>
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
