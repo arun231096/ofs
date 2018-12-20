@@ -145,6 +145,166 @@ CREATE TABLE semester_result(
 );
 
 
+20/12/2018
+	
+
+Integration
+	
+
+Services and UI Integration
+
+21/12/2018
+	
+
+Maven
+	
+
+Convert existing java project into maven project
+	
+
+Videos
+	
+
+Practice
+	
+
+https://www.udemy.com/mavencrashcourse/learn/v4/overview
 		
+
+Free
+
+22/12/2018
+	
+
+Spring core - IOC, DI
+	
+
+Replace direct instantiate with Spring Dependency Injection
+	
+
+Review and Video
+	
+
+Practice
+	
+
+https://www.udemy.com/spring-framework-video-tutorial/
 		
-					
+
+Free
+
+24/12/2018
+	
+
+JSP
+	
+
+Migrate from HTML to JSP
+	
+
+Videos
+	
+
+Practice
+	
+
+https://www.udemy.com/jsp-servlet-free/
+	
+
+Refer Only:
+Hello JSP
+JSP expressions element
+JSP scriptlets element
+JSP declarations element
+JSP comment element
+JSP Directive element
+Forms(All four)
+	
+
+Free
+
+25/12/2018
+	
+
+Review and Practice
+	
+
+Practice
+
+26/12/2018
+	
+
+Spring MVC
+	
+
+Replace Servlet with Spring Rest
+	
+
+Review and Video
+	
+
+Practice
+	
+
+https://www.udemy.com/spring-tutorial-for-beginners/learn/v4/content
+	
+
+Refer Only: Section 11
+	
+
+Free
+
+27/12/2018
+	
+
+Review and Practice
+	
+
+Practice
+
+28/12/2018
+	
+
+Hibernate
+	
+
+Replace JDBC layer with hibernate
+	
+
+Videos
+	
+
+Practice
+	
+
+https://www.udemy.com/hibernate-with-java/
+		
+
+Free
+
+29/12/2018
+	
+
+Review and Practice
+	
+
+Practice
+	
+
+31/12/2018
+	
+
+Mockito with junit
+	
+
+Migrate from Testng to Junit and mock input and output
+	
+
+Videos
+	
+
+Review and Practice
+	
+
+https://www.udemy.com/junitandmockitocrashcourse/
+	
