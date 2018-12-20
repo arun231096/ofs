@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Login Page</title>
+    <link rel="icon" href="assets/img/logo.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+  </head>
+  <body id="bg">
+    <center>
+      <div id="loginbox" class="logbox">
+      <span id ="count" class="count">0</span>
+        <div id="brand">
+          <span><img src="assets/img/logo.png" /></span>
+          <span id="loghead"> OFS <label>Sign In</label></span>
+        </div>
+        <div id="userdiv" class="userdiv">
+          <input type="text" id="username" class="input" name="username" placeholder="Username" />
+        </div>
+        <div id="passdiv" class="passdiv">
+          <input type="password" id="password" class="input" name="password" placeholder="Password" />
+        </div>
+        <div id="alertmessage" class="alert"></div>
+        <div id="usrevent" class="padd">
+          <a href="html/resetpassword.html" class="resetlink"> Reset password</a>
+          <button id="logbutton" class="logbut" onclick="loginValidate()">Login</button>
+        </div>
+      </div>
+    </center>
+  </body>
+  <script src="scripts/validate.js"></script>
+</html>

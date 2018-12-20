@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<test name="Test1">
+  <groups>
+    <run>
+      <include name="functest"/>
+    </run>
+  </groups>
+  <classes>
+    <class name="example1.Test1"/>
+  </classes>
+</test>

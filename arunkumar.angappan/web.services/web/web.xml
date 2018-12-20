@@ -1,0 +1,23 @@
+
+<web-app>
+
+<servlet>
+  <servlet-name>PersonServlet</servlet-name>
+  <servlet-class>com.objectfrontier.training.webservices.servlet.PersonServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>PersonServlet</servlet-name>
+  <url-pattern>/do/person</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>AddressServlet</servlet-name>
+  <servlet-class>com.objectfrontier.training.webservices.servlet.AddressServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>AddressServlet</servlet-name>
+  <url-pattern>/do/address</url-pattern>
+</servlet-mapping>
+</web-app>

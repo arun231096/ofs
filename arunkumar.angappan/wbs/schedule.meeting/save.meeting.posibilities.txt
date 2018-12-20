@@ -1,0 +1,67 @@
+Sequence Diagram : SaveMeet (Posibility 1)
+
+@startuml
+skinparam defaultFontName Courier
+skinparam LifeLineFontSize 10
+autonumber
+actor User
+activate User
+User-> OS : touchIcon()
+activate OS
+OS-> MeetingApp : getSave()
+activate MeetingApp
+MeetingApp -> BackEndService : getToSaveMeet(title,date,starttime,endtime,voicetype,country,eventinfo)
+activate BackEndService
+
+alt successful case
+BackEndService --> MeetingApp : success notification 
+else some kind of failure
+BackEndService --> MeetingApp : error notification
+end
+deactivate BackEndService
+MeetingApp --> OS: notification message
+deactivate MeetingApp
+OS --> User: notification message
+deactivate OS
+deactivate User
+@enduml
+  
+
+     ,-.                                                                                                                                                  
+       `-'                                                                                                                                                  
+       /|\                                                                                                                                                  
+        |                        ,--.                   ,----------.                                                              ,--------------.          
+       / \                       |OS|                   |MeetingApp|                                                              |BackEndService|          
+      User                       `+-'                   `----+-----'                                                              `------+-------'          
+      ,-.     1 touchIcon()      ,-.                         |                                                                           |                  
+      |X| ---------------------->|X|                         |                                                                           |                  
+      |X|                        |X|                         |                                                                           |                  
+      |X|                        |X|      2 getSave()       ,-.                                                                          |                  
+      |X|                        |X| ---------------------->|X|                                                                          |                  
+      |X|                        |X|                        |X|                                                                          |                  
+      |X|                        |X|                        |X|3 getToSaveMeet(title,date,starttime,endtime,voicetype,country,eventinfo) ,-.                
+      |X|                        |X|                        |X| -----------------------------------------------------------------------> |X|                
+      |X|                        |X|                        |X|                                                                          |X|                
+      |X|                        |X|                        |X|                                                                          |X|                
+      |X|                        |X|          _____________________________________________________________________________________________________________ 
+      |X|                        |X|          ! ALT  /  successful case                                                                  |X|               !
+      |X|                        |X|          !_____/       |X|                                                                          |X|               !
+      |X|                        |X|          !             |X|                         4 success notification                           |X|               !
+      |X|                        |X|          !             |X| <- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |X|               !
+      |X|                        |X|          !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~!
+      |X|                        |X|          ! [some kind of failure]                                                                   |X|               !
+      |X|                        |X|          !             |X|                          5 error notification                            |X|               !
+      |X|                        |X|          !             |X| <- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |X|               !
+      |X|                        |X|          !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~!
+      |X|                        |X|                        |X|                                                                          `-'                
+      |X|                        |X| 6 notification message |X|                                                                          |                  
+      |X|                        |X| <- - - - - - - - - - - |X|                                                                          |                  
+      |X|                        |X|                        `-'                                                                          |                  
+      |X| 7 notification message |X|                         |                                                                           |                  
+      |X| <- - - - - - - - - - - |X|                         |                                                                           |                  
+      `-'r                       `-'.                   ,----+-----.                                                              ,------+-------.          
+       ,-.                       |OS|                   |MeetingApp|                                                              |BackEndService|          
+       `-'                       `--'                   `----------'                                                              `--------------'          
+       /|\                                                                                                                                                  
+        |                                                                                                                                                   
+       / \                                                                                                                                                  

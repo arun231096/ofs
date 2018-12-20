@@ -1,0 +1,103 @@
+<!-- <html> -->
+
+<!-- <head> -->
+<!-- <script> -->
+
+<!-- var content; -->
+<!-- var text,row,td; -->
+<!-- var address = ["street", "city", "pc"]; -->
+
+<!-- var readPerson = function () { -->
+    <!-- var xhttp = new XMLHttpRequest(); -->
+    <!-- xhttp.onreadystatechange = function() { -->
+        <!-- if (this.readyState == 4 && this.status == 200) { -->
+        <!-- content = JSON.parse(this.responseText); -->
+        <!-- for (i=0; i< content.length; i++) { -->
+            <!-- row = document.createElement("tr"); -->
+            <!-- var cc = i+1; -->
+            <!-- row.setAttribute("id", content[i].id); -->
+            <!-- row.setAttribute("onclick", "display("+content[i].id+")"); -->
+            <!-- document.getElementById("demo").appendChild(row); -->
+            
+            <!-- td = document.createElement("td"); -->
+            <!-- text = document.createTextNode(i+1); -->
+            <!-- td.appendChild(text); -->
+            
+            <!-- for (var j=0; j<= address.length; j++ ) { -->
+              <!-- document.getElementById(content[i].id).appendChild(td); -->
+              <!-- td = document.createElement("td"); -->
+              <!-- td.setAttribute("id", address[j]); -->
+              <!-- if (address[j] === "street") { -->
+              <!-- text = document.createTextNode(content[i].street); -->
+              <!-- } else if (address[j] === "city") { -->
+              <!-- text = document.createTextNode(content[i].city); -->
+              <!-- } else { -->
+                <!-- text = document.createTextNode(content[i].postal_code); -->
+              <!-- } -->
+              <!-- td.appendChild(text); -->
+            <!-- } -->
+        <!-- } -->
+      <!-- } -->
+    <!-- }; -->
+    <!-- xhttp.open("GET", "address.json", true); -->
+    <!-- xhttp.send(); -->
+<!-- }; -->
+<!-- </script> -->
+
+
+<!-- </head> -->
+<!-- <body onload="readPerson()"> -->
+<!-- <table id="demo" border="1"> -->
+<!-- <tr id="header"> -->
+                <!-- <th id="sno">S.no</th> -->
+                <!-- <th id="street">Street</th> -->
+                <!-- <th id="city">City</th> -->
+                <!-- <th id="postal-code">Postal Code</th> -->
+              <!-- </tr> -->
+<!-- </table> -->
+
+<!-- <p id="hello"> -->
+<!-- <input type="text" id="istreet"/> -->
+<!-- <input type="text" id="icity"/> -->
+<!-- <input type="text" id="ipc"/> -->
+<!-- </p> -->
+
+<!-- </body> -->
+<!-- <script> -->
+
+
+<!-- function display (id) { -->
+
+<!-- var Row = document.getElementById(id); -->
+<!-- var Cells = Row.getElementsByTagName("td"); -->
+
+  <!-- document.getElementById("istreet").value = Cells[0].innerText; -->
+  <!-- document.getElementById("icity").value = Cells[1].innerText; -->
+<!-- document.getElementById("ipc").value = Cells[2].innerText; -->
+<!-- } -->
+<!-- </script> -->
+<!-- </html> -->
+
+<html>
+  <head>
+    <title> Dashboard </title>
+    <link rel="icon" href="../assets/img/logo.png" type="image/png" />
+    <link rel="stylesheet" type="text/css" href="../styles/demo.css" />
+  </head>
+  <body id="bg" onload="constructLsp()">
+    <div id="address-container" class="container">
+      <div class="row">
+        <div id="nav-bar" class="navbar">
+        <div class="list-link" id="links">
+            
+        </div>
+        </div>
+        <div id="details-container" class="details">
+
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="../scripts/component.js"></script>
+  <script src="../scripts/demo.js"></script>
+</html>

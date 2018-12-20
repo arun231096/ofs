@@ -1,0 +1,22 @@
+Sequence Diagram :- fb user clicking on edit profile page.
+
+@startuml
+skinparam defaultFontName Courier
+skinparam LifeLineFontSize 10
+autonumber
+actor fbUser 
+entity profilePage 
+entity editProfilePage 
+entity api
+activate fbUser
+fbUser-> profilePage : clickOnEditProfileButton()
+activate profilePage
+profilePage -> editProfilePage:openEditProfilePage()
+activate editProfilePage
+editProfilePage -> api: collectData()
+api -->editProfilePage : response
+editProfilePage->editProfilePage : showAllFiled()
+deactivate fbUser
+deactivate profilePage
+deactivate editProfilePage
+@enduml

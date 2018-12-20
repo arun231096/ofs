@@ -1,0 +1,146 @@
+java/general.practice/StringObject.class
+java/general.practice/Shape.class
+java/general.practice/Circle.class
+java/general.practice/AbstractDemo.class
+java/general.practice/Square.class
+java/test-output/testng.css
+java/test-output/testng-results.xml
+java/test-output/testng-reports.js
+java/test-output/testng-reports.css
+java/test-output/testng-failed.xml
+java/test-output/skipped.png
+java/test-output/passed.png
+java/test-output/old/index.html
+java/test-output/old/Default suite/toc.html
+java/test-output/old/Default suite/testng.xml.html
+java/test-output/old/Default suite/reporter-output.html
+java/test-output/old/Default suite/methods.html
+java/test-output/old/Default suite/methods-not-run.html
+java/test-output/old/Default suite/methods-alphabetical.html
+java/test-output/old/Default suite/main.html
+java/test-output/old/Default suite/index.html
+java/test-output/old/Default suite/groups.html
+java/test-output/old/Default suite/classes.html
+java/test-output/old/Default suite/Default test.properties
+java/test-output/navigator-bullet.png
+java/test-output/junitreports/TEST-com.objectfrontier.training.java.jdbc.test.PersonServiceTest.xml
+java/test-output/junitreports/TEST-com.objectfrontier.training.java.jdbc.test.Demo.xml
+java/test-output/junitreports/TEST-com.objectfrontier.training.java.jdbc.test.AddressServiceTest.xml
+java/test-output/jquery-1.7.1.min.js
+java/test-output/index.html
+java/test-output/failed.png
+java/test-output/emailable-report.html
+java/test-output/collapseall.gif
+java/test-output/bullet_point.png
+java/test-output/Default suite/testng-failed.xml
+java/test-output/Default suite/Default test.xml
+java/test-output/Default suite/Default test.html
+java/general.practice/com/objectfrontier/training/java/pack/TimerOperation.java
+java/general.practice/com/objectfrontier/training/java/pack/Comparsion.java
+java/general.practice/com/objectfrontier/training/java/jdbc/test/PersonServiceTest.java
+java/general.practice/com/objectfrontier/training/java/jdbc/test/Demo.java
+java/general.practice/com/objectfrontier/training/java/jdbc/test/AddressServiceTest.java
+java/general.practice/com/objectfrontier/training/java/jdbc/test/Addition.java
+java/general.practice/com/objectfrontier/training/java/jdbc/Demo.java
+db/db.jdbc.exercise/example.sql
+webservice.ccc/test-output/testng.css
+webservice.ccc/test-output/testng-results.xml
+webservice.ccc/test-output/testng-reports.js
+webservice.ccc/test-output/testng-reports.css
+webservice.ccc/test-output/testng-failed.xml
+webservice.ccc/test-output/skipped.png
+webservice.ccc/test-output/passed.png
+webservice.ccc/test-output/old/index.html
+webservice.ccc/test-output/old/Default suite/toc.html
+webservice.ccc/test-output/old/Default suite/testng.xml.html
+webservice.ccc/test-output/old/Default suite/reporter-output.html
+webservice.ccc/test-output/old/Default suite/methods.html
+webservice.ccc/test-output/collapseall.gif
+webservice.ccc/test-output/bullet_point.png
+webservice.ccc/test-output/Default suite/testng-failed.xml
+webservice.ccc/test-output/Default suite/Default test.xml
+webservice.ccc/test-output/Default suite/Default test.html
+web.services/test-output/testng.css
+web.services/test-output/testng-results.xml
+web.services/test-output/testng-reports.js
+web.services/test-output/testng-reports.css
+web.services/test-output/testng-failed.xml
+web.services/test-output/skipped.png
+web.services/test-output/passed.png
+web.services/test-output/old/index.html
+web.services/test-output/old/Default suite/toc.html
+web.services/test-output/old/Default suite/testng.xml.html
+web.services/test-output/old/Default suite/reporter-output.html
+web.services/test-output/old/Default suite/methods.html
+web.services/test-output/old/Default suite/methods-not-run.html
+web.services/test-output/old/Default suite/methods-alphabetical.html
+web.services/test-output/old/Default suite/main.html
+web.services/test-output/old/Default suite/index.html
+web.services/test-output/old/Default suite/groups.html
+web.services/test-output/old/Default suite/classes.html
+web.services/test-output/old/Default suite/Default test.properties
+web.services/test-output/navigator-bullet.png
+web.services/test-output/junitreports/TEST-com.objectfrontier.training.webservices.test.PersonServiceTest.xml
+web.services/test-output/jquery-1.7.1.min.js
+web.services/test-output/index.html
+web.services/test-output/failed.png
+web.services/test-output/emailable-report.html
+web.services/test-output/collapseall.gif
+web.services/test-output/bullet_point.png
+web.services/test-output/Default suite/testng-failed.xml
+web.services/test-output/Default suite/Default test.xml
+web.services/test-output/Default suite/Default test.html
+web.services/src/com/objectfrontier/training/webservices/test/testng.xml
+web.services/src/com/objectfrontier/training/webservices/test/testng.out.xml
+service/test-output/testng.css
+service/test-output/testng-results.xml
+service/test-output/testng-reports.js
+service/test-output/testng-reports.css
+service/test-output/testng-failed.xml
+service/test-output/skipped.png
+service/test-output/passed.png
+service/test-output/old/index.html
+service/test-output/old/Default suite/toc.html
+service/test-output/old/Default suite/testng.xml.html
+service/test-output/old/Default suite/reporter-output.html
+service/test-output/old/Default suite/methods.html
+service/test-output/old/Default suite/methods-not-run.html
+service/test-output/old/Default suite/methods-alphabetical.html
+service/test-output/old/Default suite/groups.html
+service/test-output/old/Default suite/classes.html
+service/test-output/old/Default suite/Default test.properties
+service/test-output/navigator-bullet.png
+service/test-output/junitreports/TEST-com.objectfrontier.training.java.test.PersonServiceTest.xml
+service/test-output/junitreports/TEST-com.objectfrontier.training.java.test.DemoTest.xml
+service/test-output/jquery-1.7.1.min.js
+service/test-output/index.html
+service/test-output/failed.png
+service/test-output/emailable-report.html
+service/test-output/collapseall.gif
+service/test-output/bullet_point.png
+service/test-output/Default suite/testng-failed.xml
+service/test-output/Default suite/Default test.xml
+service/test-output/Default suite/Default test.html
+service/src/com/objectfrontier/training/java/test/testng.xml
+service/src/com/objectfrontier/training/java/test/testng.out.xml
+service/test-output/old/Default suite/index.html
+webservice.ccc/test-output/junitreports/TEST-com.objectfrontier.training.webservices.test.TestAddressServlet.xml
+webservice.ccc/test-output/junitreports/TEST-com.objectfrontier.training.webservices.test.DemoTest.xml
+webservice.ccc/test-output/junitreports/TEST-com.objectfrontier.training.webservices.test.AddressServiceTest.xml
+webservice.ccc/test-output/jquery-1.7.1.min.js
+webservice.ccc/test-output/index.html
+webservice.ccc/test-output/failed.png
+webservice.ccc/test-output/emailable-report.html
+webservice.ccc/test-output/old/Default suite/methods-not-run.html
+webservice.ccc/test-output/old/Default suite/methods-alphabetical.html
+webservice.ccc/test-output/old/Default suite/main.html
+webservice.ccc/test-output/old/Default suite/index.html
+webservice.ccc/test-output/old/Default suite/Default test.properties
+webservice.ccc/test-output/navigator-bullet.png
+web.services/test-output/junitreports/TEST-com.objectfrontier.training.webservices.test.AddressServiceTest.xml
+webservice.ccc/test-output/old/Default suite/groups.html
+webservice.ccc/test-output/old/Default suite/classes.html
+service/test-output/old/Default suite/main.html
+webservice.ccc/test-output/junitreports/TEST-com.objectfrontier.training.webservices.test.PersonServiceTest.xml
+UI/login/mongoose.conf
+UI/login/mongoose-free-6.1.exe

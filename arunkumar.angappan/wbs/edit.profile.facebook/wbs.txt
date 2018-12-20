@@ -1,0 +1,37 @@
+User Presepective :-
+
+		Problem Understanding :- Edit the profile in facebook
+	
+	Infered Requirements   				Assumptions
+	
+	Name        						Family details
+    username                            profile privacy
+	email
+	mobile number
+    occupation
+    
+	Clarification :- Nil
+
+System Prespective :-
+ 	
+	Events Identification :- 	
+		1.fb user clicking on edit profile page.
+				Source :- fb User Trigger, :- clicking on edit profile button
+				Start State/Precondition:- profile page to find edited profile button
+				End State :- displaying the edit profile page
+				
+			Jobs to be done :-collect the data and display the data
+
+		2.fb user saving profile details.
+				Source :- fb User  Trigger, :- clicking save changes button
+		Posibility 1-
+				Start State/Precondition:- edit profile page
+				EndState :- Save the edited details and returning to profile page
+			Jobs to be done :- collect the profile informations
+		Posibility 2:-
+				Start State/Precondition:- edit profile page
+				End State :- throws error message in edit profile page
+				
+			Jobs to be done :-validate the data
+	
+	Identify the entites :- User,fb profile page, fb edit profile page, dataBase.

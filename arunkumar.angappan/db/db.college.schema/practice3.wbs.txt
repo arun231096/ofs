@@ -1,0 +1,10 @@
+ -- Select students details who are studying under a particular university and selected cities alone
+ 
+ JOBS to be done
+ 
+ 1. select university and city
+ 2. find the department in the particular university and city
+ 3. find the college in the particular university and under the colleges
+ 3. track the college department buy using the college details
+ 4. get the employee details and find HOD
+ 5. print the student details in the particular college, city and particular university

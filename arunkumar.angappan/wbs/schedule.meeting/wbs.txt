@@ -1,0 +1,48 @@
+User Presepective :-
+
+
+
+
+
+		Problem Understanding :- To shedule a meeting.
+	
+	Infered Requirements   				Assumptions
+	
+	Meeting title					Add specific people for meeting
+	meeting date					Email Notification to the participants
+	starte time
+	end time
+	voice type
+	country information
+	event information
+	
+	Clarification :- Nil
+
+System Prespective :-
+ 	
+	Events Identification :- 	
+		1.Schedule a Meeting.
+				Source :- User Trigger, :- touch icon
+				Start State :- To touch the Schedule a meet Icon
+			        		Get the details of title, date, start time, end time, voice type, country and event information as input.
+				End State :- Click the save button to save the scheduled meet.
+			Jobs to be done :- openScheduleMeet(),showAllFileds(),getMeetingTitle(),getMeetingDate(),getMeetingStartTime(),getMeetingEndTime(),getMeetingCallType(),getMeetingCountry(),getMeetingEventInfo()
+		2.Save Meeting.
+				Source :- User Trigger, :- touch save meet icon
+			Posibility 1:-
+				Start State :- To click the Save Meet
+					to pass the meeting details to backend service
+				EndState :- Save the meet and returning to home screen
+			Jobs to be done :- getToSaveMeet(title,date,starttime,endtime,voicetype,country,eventinfo)
+
+			Posibility 2:-
+				Start State :- To click the Save Meet
+					to pass the meeting details to backend service
+				EndState :- throws a error message 
+			Jobs to be done :- getToSaveMeet(title,date,starttime,endtime,voicetype,country,eventinfo)
+	
+	Identify the entites :- User, OS, Meeting App, Backend Service.
+
+Developer Prespective :-
+
+	

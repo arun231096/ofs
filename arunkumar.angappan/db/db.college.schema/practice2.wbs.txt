@@ -1,0 +1,9 @@
+-- Select final year students
+
+Jobs to be done
+1. select the university 
+2. select the city based on university
+3. using city get the college details from the city
+4.get the college department details based on college id
+5. get the department name and details based on college department id
+6. select the students based on college id and department where select the final year students based on academic year

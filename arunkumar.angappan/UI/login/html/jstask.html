@@ -1,0 +1,40 @@
+<html>
+<script>
+<!-- type one  -->
+var Animal = function (eyes, legs, talk) { 
+    this.eyes= eyes;
+    this.legs= legs;
+    this.talk = talk;
+};
+
+var talk = function() { console.log('Animal talks');};
+
+console.log(Animal);
+var a = new Animal(2,3,talk);
+console.log(a);
+a.talk();
+
+var b = new Animal(2, 3, null);
+console.log(b);
+console.log(b.talk);
+
+b.talk = talk;
+b.talk();
+
+<!-- type two -->
+
+var Animal = function (eyes, legs) { 
+    this.eyes= eyes;
+    this.legs= legs;
+    this.talk= null;
+};
+console.log(Animal);
+var a = new Animal(2,3);
+console.log(a);
+a.talk= talk;
+console.log(a);
+a.talk();
+
+</script>
+
+</html>

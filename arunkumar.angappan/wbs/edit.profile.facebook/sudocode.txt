@@ -1,0 +1,13 @@
+class ProfilePage{
+clickOnEditProfileButton()
+}
+
+class EditProfilePage{
+   name: String
+   mobile: int
+   username: String
+   occupation: String
+   email: String
+openEditProfilePage()
+saveEditChange()
+}
