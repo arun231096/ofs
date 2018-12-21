@@ -7,13 +7,13 @@ rsp.createChildren = function () {
 }
 
 rsp.getPojo= function() {
-    service.doGet('GET','../assets/json/personPojo.json', false);
+    service.doGet('GET','assets/json/personPojo.json', false);
     rsp.jsonPerson = JSON.parse(service.response);
-    service.doGet('GET','../assets/json/addressPojo.json', false);
+    service.doGet('GET','assets/json/addressPojo.json', false);
     rsp.jsonAddress = JSON.parse(service.response);
 }
 rsp.createView = function(){
-    var rspchild = service.doGet('GET','../html/rsp.html', false);
+    var rspchild = service.doGet('GET','html/rsp.html', false);
     rsp.setView();
 }
 
@@ -22,7 +22,7 @@ rsp.setView = function () {
 }
 
 rsp.createPersonPanel = function () {
-    service.doGet('GET', '../html/personpanel.html', false);
+    service.doGet('GET', 'html/personpanel.html', false);
     document.getElementById('details-container').innerHTML = service.response;
     rsp.getData('person');
     rsp.setViewPanel('person');
@@ -31,7 +31,7 @@ rsp.createPersonPanel = function () {
 }
 
 rsp.createAddressPanel = function() {
-    service.doGet('GET', '../html/addressPanel.html', false);
+    service.doGet('GET', 'html/addressPanel.html', false);
     document.getElementById('details-container').innerHTML = service.response;
     rsp.getData('address');
     rsp.setViewPanel('address');
@@ -41,14 +41,14 @@ rsp.createAddressPanel = function() {
 
 rsp.getData = function(field){
     if (field === 'person') {
-        service.doGet('GET','../assets/json/person.json', false);
+        service.doGet('GET','../../ws.ccc/do/person?field=readall', false);
         personData = JSON.parse(service.response);
         if (personData.length != 0) {
             rsp.AddTable(field);
             rsp.createPersonList();
         }
     } else if (field === 'address') {
-        service.doGet('GET','../assets/json/address.json', false);
+        service.doGet('GET','../../ws.ccc/do/address?field=readall', false);
         addressData = JSON.parse(service.response);
         if (addressData.length != 0) {
             rsp.AddTable(field);
@@ -59,14 +59,14 @@ rsp.getData = function(field){
 
 rsp.setViewPanel = function(field){
     if (field === 'person') {
-        service.doGet('GET','../html/personInfopanel.html', false);
+        service.doGet('GET','html/personInfopanel.html', false);
         document.getElementById('person-panel').innerHTML += service.response;
-        service.doGet('GET','../html/personform.html', false);
+        service.doGet('GET','html/personForm.html', false);
         document.getElementById('person-manipulation').innerHTML = service.response;
     }else if (field === 'address') {
-        service.doGet('GET','../html/addressInfopanel.html', false);
+        service.doGet('GET','html/addressInfoPanel.html', false);
         document.getElementById('address-panel').innerHTML += service.response;
-        service.doGet('GET','../html/addressForm.html', false);
+        service.doGet('GET','html/addressForm.html', false);
         document.getElementById('address-manipulation').innerHTML = service.response;
     }
 }
@@ -103,11 +103,11 @@ rsp.setDefault = function (field) {
 
 rsp.AddTable = function(field) {
     if (field === 'person') {
-        service.doGet('GET','../html/personList.html', false);
+        service.doGet('GET','html/personList.html', false);
         document.getElementById('person-panel').innerHTML += service.response;
         document.getElementById('add-button').setAttribute('onclick', 'em.add("person")');
     }else if (field === 'address') {
-        service.doGet('GET','../html/addressList.html', false);
+        service.doGet('GET','html/addressList.html', false);
         document.getElementById('address-panel').innerHTML += service.response;
         document.getElementById('add-button').setAttribute('onclick', 'em.add("address")');
     }
@@ -115,7 +115,7 @@ rsp.AddTable = function(field) {
 
 rsp.createPersonList = function() {
     for(var i = 0; i< personData.length; i++) {
-        service.doGet('GET', '../html/personTable.html', false);
+        service.doGet('GET', 'html/personTable.html', false);
         var personTable = service.response;
         personTable = personTable.replace('emp.id', personData[i].id);
         personTable = personTable.replace('firstname', personData[i].firstname);
@@ -129,7 +129,7 @@ rsp.createPersonList = function() {
 
 rsp.createAddressList = function() {
     for(var i=0; i< addressData.length; i++) {
-        service.doGet('GET', '../html/addressTable.html', false);
+        service.doGet('GET', 'html/addressTable.html', false);
         var addressTable = service.response;
         addressTable = addressTable.replace('street', addressData[i].street);
         addressTable = addressTable.replace('city', addressData[i].city);

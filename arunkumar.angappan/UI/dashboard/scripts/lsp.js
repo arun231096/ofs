@@ -5,7 +5,7 @@ lsp.createChildren = function() {
 }
 
 lsp.createView = function(){
-    service.doGet('GET','../html/lsp.html', false);
+    service.doGet('GET','html/lsp.html', false);
     lsp.setView();
 }
 
