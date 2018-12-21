@@ -3,7 +3,7 @@
   "firstname" : "Arun",
   "lastname" : "Kumar",
   "email" : "arunak283933@gmail.com",
-  "password" : null,
+  "password" : "1234",
   "isadmin" : true,
   "dob" : "23-10-1996",
   "createdDate" : 1543220027000,
