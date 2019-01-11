@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="5" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="178" started-at="2019-01-07T12:09:47Z" finished-at="2019-01-07T12:09:47Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="178" started-at="2019-01-07T12:09:47Z" finished-at="2019-01-07T12:09:47Z">
+      <class name="com.objectfrontier.training.test.PersonServiceTest">
+        <test-method status="PASS" signature="createTest()[pri:0, instance:com.objectfrontier.training.test.PersonServiceTest@c038203]" name="createTest" duration-ms="141" started-at="2019-01-07T17:39:47Z" finished-at="2019-01-07T17:39:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTest -->
+        <test-method status="PASS" signature="createTestNegative()[pri:0, instance:com.objectfrontier.training.test.PersonServiceTest@c038203]" name="createTestNegative" duration-ms="3" started-at="2019-01-07T17:39:47Z" finished-at="2019-01-07T17:39:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTestNegative -->
+        <test-method status="PASS" signature="deleteTest()[pri:0, instance:com.objectfrontier.training.test.PersonServiceTest@c038203]" name="deleteTest" duration-ms="1" started-at="2019-01-07T17:39:47Z" finished-at="2019-01-07T17:39:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTest -->
+        <test-method status="PASS" signature="readTest()[pri:0, instance:com.objectfrontier.training.test.PersonServiceTest@c038203]" name="readTest" duration-ms="2" started-at="2019-01-07T17:39:47Z" finished-at="2019-01-07T17:39:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- readTest -->
+        <test-method status="PASS" signature="updateTest()[pri:0, instance:com.objectfrontier.training.test.PersonServiceTest@c038203]" name="updateTest" duration-ms="1" started-at="2019-01-07T17:39:47Z" finished-at="2019-01-07T17:39:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateTest -->
+      </class> <!-- com.objectfrontier.training.test.PersonServiceTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
