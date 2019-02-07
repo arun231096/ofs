@@ -1,0 +1,36 @@
+Authentication - LDAP, CAS, JWT
+
+https://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/#ldap
+https://spring.io/guides/gs/authenticating-ldap/
+https://docs.spring.io/spring-ldap/docs/2.3.1.RELEASE/reference/
+https://auth0.com/blog/implementing-jwt-authentication-on-spring-boot/
+
+
+Logging - Logback
+
+https://logback.qos.ch/manual/index.html
+https://logback.qos.ch/manual/mdc.html
+
+
+Data layer - Hibernate
+
+http://docs.jboss.org/hibernate/orm/5.4/userguide/html_single/Hibernate_User_Guide.html
+http://docs.jboss.org/hibernate/orm/5.4/quickstart/html_single/
+
+
+LDAP-MYSQL user identity synchronization
+
+https://lsc-project.org/documentation/2.0/configuration/service
+https://lsc-project.org/documentation/2.0/configuration/service/sourceldap
+https://lsc-project.org/documentation/2.0/configuration/service/destinationsql
+
+
+LDAP
+
+https://www.tldp.org/HOWTO/LDAP-HOWTO/ldapbackends.html
+
+
+Jackson
+
+http://cowtowncoder.com/blog/blog.html
+https://github.com/FasterXML/jackson-docs/wiki/JacksonHome
