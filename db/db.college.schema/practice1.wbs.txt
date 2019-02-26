@@ -1,0 +1,10 @@
+-- Select College details which are having IT / CSC departments across all the universities.
+
+Jobs to be done
+
+ 1.select the computer science or information technology department from the department table
+ 2.based on the department get department code then sort the college department
+ 3.based on the college department sort the colleges in the tables which has cse/it
+ 4.sort the employees using college id
+ 5.get employee designation as HOD using employee desigantion id in designation table
+ 6.Display the College details which are having IT / CSC departments across all the universities

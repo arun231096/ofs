@@ -1,0 +1,7 @@
+-- Update PAID_STATUS and PAID_YEAR in SEMESTER_FEE 
+
+
+Jobs to be done
+
+1. collect the student details who have paid the semester fee
+2. update the fee details into the semester fee table

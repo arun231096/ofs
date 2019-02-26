@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>web.services</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>classes</name>
+			<type>2</type>
+			<locationURI>JETTY_HOME/classes</locationURI>
+		</link>
+		<link>
+			<name>ws</name>
+			<type>2</type>
+			<locationURI>JETTY_HOME</locationURI>
+		</link>
+	</linkedResources>
+	<variableList>
+		<variable>
+			<name>JETTY_HOME</name>
+			<value>file:/D:/tools/jetty-distribution-9.3.6.v20151106/webapps/ws/WEB-INF</value>
+		</variable>
+	</variableList>
+</projectDescription>

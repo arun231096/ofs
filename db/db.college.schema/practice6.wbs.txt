@@ -1,0 +1,6 @@
+--new entries in SEMESTER_FEE table for each student from all the colleges and across all the universities. 
+
+Jobs to be Done 
+1. alter the table fee status an unpaid default
+2. using alter query make changes in fee status
+3.insert the semester fee details to the semester fee table

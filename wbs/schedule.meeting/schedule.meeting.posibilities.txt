@@ -1,0 +1,106 @@
+Sequence Diagram :- Schedule a meeting
+
+
+@startuml
+skinparam defaultFontName Courier
+skinparam LifeLineFontSize 10
+autonumber
+actor User
+activate User
+User-> OS : touchIcon()
+activate OS
+OS-> MeetingApp : openScheduleMeet()
+activate MeetingApp
+MeetingApp -> MeetingApp : showAllFileds()
+MeetingApp -> OS: getMeetingTitle()
+OS-->MeetingApp :title
+MeetingApp -> OS: getMeetingDate()
+OS-->MeetingApp :date
+MeetingApp -> OS: getMeetingStartTime()
+OS-->MeetingApp :starttime
+MeetingApp -> OS: getMeetingEndTime()
+OS-->MeetingApp :endtime
+MeetingApp -> OS: getMeetingCallType()
+OS-->MeetingApp :calltype
+MeetingApp -> OS: getMeetingCountry()
+OS-->MeetingApp :country
+MeetingApp -> OS: getMeetingEventInfo()
+OS-->MeetingApp :eventinfo
+MeetingApp--> OS : response
+OS--> User : reponse
+deactivate User
+deactivate MeetingApp
+deactivate OS
+@enduml
+
+
+       ,-.                                                                  
+       `-'                                                                  
+       /|\                                                                  
+        |             ,--.                     ,----------.                 
+       / \            |OS|                     |MeetingApp|                 
+      User            `+-'                     `----+-----'                 
+      ,-.1 touchIcon() ,-.                          |                       
+      |X| -----------> |X|                          |                       
+      |X|              |X|                          |                       
+      |X|              |X|   2 openScheduleMeet()   ,-.                     
+      |X|              |X| ------------------------>|X|                     
+      |X|              |X|                          |X|                     
+      |X|              |X|                          |X|----.                
+      |X|              |X|                          |X|    | <b>3</b>       
+      |X|              |X|                          |X|<---' showAllFileds()
+      |X|              |X|                          |X|                     
+      |X|              |X|                          |X|                     
+      |X|              |X|   4 getMeetingTitle()    |X|                     
+      |X|              |X| <------------------------|X|                     
+      |X|              |X|                          |X|                     
+      |X|              |X|         5 title          |X|                     
+      |X|              |X|  - - - - - - - - - - - ->|X|                     
+      |X|              |X|                          |X|                     
+      |X|              |X|    6 getMeetingDate()    |X|                     
+      |X|              |X| <------------------------|X|                     
+      |X|              |X|                          |X|                     
+      |X|              |X|          7 date          |X|                     
+      |X|              |X|  - - - - - - - - - - - ->|X|                     
+      |X|              |X|                          |X|                     
+      |X|              |X| 8 getMeetingStartTime()  |X|                     
+      |X|              |X| <------------------------|X|                     
+      |X|              |X|                          |X|                     
+      |X|              |X|       9 starttime        |X|                     
+      |X|              |X|  - - - - - - - - - - - ->|X|                     
+      |X|              |X|                          |X|                     
+      |X|              |X|  10 getMeetingEndTime()  |X|                     
+      |X|              |X| <------------------------|X|                     
+      |X|              |X|                          |X|                     
+      |X|              |X|        11 endtime        |X|                     
+      |X|              |X|  - - - - - - - - - - - ->|X|                     
+      |X|              |X|                          |X|                     
+      |X|              |X| 12 getMeetingCallType()  |X|                     
+      |X|              |X| <------------------------|X|                     
+      |X|              |X|                          |X|                     
+      |X|              |X|       13 calltype        |X|                     
+      |X|              |X|  - - - - - - - - - - - ->|X|                     
+      |X|              |X|                          |X|                     
+      |X|              |X|  14 getMeetingCountry()  |X|                     
+      |X|              |X| <------------------------|X|                     
+      |X|              |X|                          |X|                     
+      |X|              |X|        15 country        |X|                     
+      |X|              |X|  - - - - - - - - - - - ->|X|                     
+      |X|              |X|                          |X|                     
+      |X|              |X| 16 getMeetingEventInfo() |X|                     
+      |X|              |X| <------------------------|X|                     
+      |X|              |X|                          |X|                     
+      |X|              |X|       17 eventinfo       |X|                     
+      |X|              |X|  - - - - - - - - - - - ->|X|                     
+      |X|              |X|                          |X|                     
+      |X|              |X|       18 response        |X|                     
+      |X|              |X| <- - - - - - - - - - - - |X|                     
+      |X|              |X|                          |X|                     
+      |X| 19 reponse   |X|                          |X|                     
+      |X| <- - - - - - |X|                          |X|                     
+      `-'r            ,`-'                     ,----`-'---.                 
+       ,-.            |OS|                     |MeetingApp|                 
+       `-'            `--'                     `----------'                 
+       /|\                                                                  
+        |                                                                   
+       / \                                                                  

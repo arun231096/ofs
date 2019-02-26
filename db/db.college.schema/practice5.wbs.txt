@@ -1,0 +1,10 @@
+--List Students details along with their GRADE,CREDIT and GPA details
+
+
+Jobs to be done
+
+1. select the college from the collections of colleges
+2. get the university details from the college
+3. get the department details from the college
+4. get the student details in the department of particular college
+5. get the result of the student 

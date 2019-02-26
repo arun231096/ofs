@@ -1,0 +1,9 @@
+-- List Employees details from a particular university
+
+Jobs to be done
+
+1. select the university
+2. collect college details using university
+3. get the department details from college
+4. gather the employee details and designation from the college department
+5. displaying the employee details

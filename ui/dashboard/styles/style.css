@@ -1,0 +1,152 @@
+#bg {
+  background:url('../assets/img/background.jpg') no-repeat;
+  background-size: 100% 100%;
+}
+.logbox {
+  border: 3px solid #A9A9A9;
+  width: 20%;
+  padding-bottom: 25px;
+  padding-top: 10px;
+  position: absolute;
+  border-radius: 0.5em;
+  background-color: #fff;
+  top: 35%;
+  left:40%;
+}
+#brand{
+  padding:20px;
+}
+#loghead {
+  float: left;
+  padding-left:10%;
+  padding-bottom:20px;
+  text-shadow: 0px 0px 1px #C8C8C8;
+  font-size:2em;
+}
+#brand img {
+  float: left;
+  padding-left:12%;
+  padding-bottom:20px;
+  margin-top:0.2em;
+}
+#brand span {
+  color: #329FDC;
+}
+span label {
+  color: #D37323;
+}
+.userdiv, .passdiv{
+  padding: 10px;
+}
+.input {
+  width:70%;
+  padding:15px;
+  border: 1px solid #B0B0B0;
+  height: 2em;
+  box-shadow: 0px 0px 1px #606060;
+  border: 1px solid #C8C8C8;
+  border-radius: 2px;
+}
+.input {
+  background: url('../assets/img/user.png')no-repeat;
+}
+.padd {
+  padding: 10px;
+}
+.resetlink {
+  padding: 10px;
+  margin-right: 2em;
+}
+.alert {
+  color: red;
+  padding: 5px;
+}
+.logbut {
+  width: 40%;
+  height: 3em;
+  background-color: #fff;
+  border: 2px solid #C8C8C8;
+  border-radius: 3px;
+}
+.logbut:hover {
+  box-shadow: 0px 0px 3px #606060;
+}
+.detail {
+  width: 30%;
+  padding: 20px;
+  height: auto;
+  position: absolute;
+  border: 1px solid #C8C8C8;
+  box-shadow: 0px 0px 3px gray;
+}
+.lable {
+  width: 50%;
+  border-bottom: 1px solid gray;
+  float: left;
+  padding: 10px;
+  color: brown;
+  text-align: left;
+}
+.info {
+  border-bottom: 1px solid gray;
+  float: left;
+  width: 40%;
+  padding: 10px;
+  color: blue;
+}
+
+
+/* Media Queries */
+
+@media (min-width: 1200px)
+.container {
+  max-width: 1140px;
+}
+@media (min-width: 992px)
+.container {
+  max-width: 960px;
+}
+
+@media (min-width: 768px)
+.container {
+  max-width: 720px;
+}
+@media (min-width: 576px)
+.container {
+  max-width: 540px;
+}
+
+@media (min-width: 1030px) and (max-width: 1400px) {
+  .logbox {
+  width: 30%;
+  left: 35%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .logbox {
+  width: 50%;
+  left: 25%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .logbox {
+  width: 60%;
+  left: 20%;
+  }
+}
+
+@media (max-width: 500px) {
+  .logbox {
+  width: 70%;
+  left: 15%;
+  }
+}
+
+@media (max-width: 377px) {
+  .logbox {
+  width: 80%;
+  left: 10%;
+  }
+}

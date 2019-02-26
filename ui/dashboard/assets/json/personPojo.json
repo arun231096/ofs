@@ -1,0 +1,11 @@
+[ {
+  "id" : 0,
+  "firstname" : null,
+  "lastname" : null,
+  "email" : null,
+  "password" : "1234",
+  "isadmin" : false,
+  "dob" : null,
+  "createdDate" : null,
+  "address" : null
+} ]

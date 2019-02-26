@@ -1,0 +1,21 @@
+Sequence Diagram : Save Profile information (Posibility 2)
+
+@startuml
+skinparam defaultFontName Courier
+skinparam LifeLineFontSize 10
+autonumber
+actor fbUser 
+entity editProfilePage
+entity api
+activate fbUser
+fbUser-> editProfilePage : clickOnSaveChangesButton()
+activate editProfilePage
+editProfilePage -> api : saveEditChange()
+activate api
+api->api: collectData()
+api->api: validateData()
+api-> editProfilePage: error message
+deactivate api
+deactivate fbUser
+deactivate editProfilePage
+@enduml
